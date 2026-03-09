@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jewelry | Osnat Levy</title>
+  <meta name="description" content="Custom jewelry design and special orders - Osnat Levy Goldsmith" />
+  <link rel="stylesheet" href="style-v2.css" />
+</head>
+<body class="ltr">
+
+  <!-- Floating Particles -->
+  <div class="particles" aria-hidden="true">
+    <div class="particle" style="left:12%; width:3px; height:3px; --dur:14s; --delay:0s;"></div>
+    <div class="particle" style="left:30%; width:2px; height:2px; --dur:11s; --delay:3s;"></div>
+    <div class="particle" style="left:60%; width:4px; height:4px; --dur:16s; --delay:6s;"></div>
+    <div class="particle" style="left:80%; width:2px; height:2px; --dur:13s; --delay:1s;"></div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="logo-wrap">
+      <img src="images/logo.png" alt="Osnat Levy Logo" class="logo-img" />
+      <span class="site-title">Osnat Levy</span>
+    </div>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index-en.html">Home</a></li>
+        <li><a href="jewelry-en.html">Jewelry</a></li>
+        <li><a href="workshops-en.html">Workshops</a></li>
+      </ul>
+    </nav>
+
+    <a href="jewelry.html" class="lang-toggle" aria-label="עבור לעברית">
+      🇮🇱 <span>עב</span>
+    </a>
+  </header>
+
+  <!-- Page Hero -->
+  <main>
+    <section class="page-hero">
+      <h1>Jewelry</h1>
+      <p>Custom jewelry design &nbsp;✦&nbsp; Special orders</p>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Coming Soon -->
+    <div class="coming-soon">
+      <span class="cs-icon">🌊</span>
+      <h2>Gallery Coming Soon</h2>
+      <p>
+        Soon you'll be able to browse Osnat's stunning jewelry pieces —<br>
+        each one carrying the magic of the open sea.
+      </p>
+    </div>
+
+    <a href="index-en.html" class="back-link" aria-label="Back to home page">
+      &#x2192; Back to Home
+    </a>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p class="credit">Website built by Liora Levy &mdash; Sea++</p>
+    <p class="rights">All rights reserved to Osnat Levy &copy; <span id="year"></span></p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
