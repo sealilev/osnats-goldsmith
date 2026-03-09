@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>אסנת לוי - צורפת</title>
+  <meta name="description" content="אסנת לוי - צורפת ומעצבת תכשיטים. תכשיטים בעיצוב אישי וסדנאות צורפות." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Floating Particles -->
+  <div class="particles" aria-hidden="true">
+    <div class="particle" style="left:8%;  width:3px; height:3px; --dur:14s; --delay:0s;"></div>
+    <div class="particle" style="left:22%; width:2px; height:2px; --dur:11s; --delay:2s;"></div>
+    <div class="particle" style="left:38%; width:4px; height:4px; --dur:16s; --delay:5s;"></div>
+    <div class="particle" style="left:55%; width:2px; height:2px; --dur:13s; --delay:1s;"></div>
+    <div class="particle" style="left:70%; width:3px; height:3px; --dur:10s; --delay:7s;"></div>
+    <div class="particle" style="left:85%; width:2px; height:2px; --dur:15s; --delay:3s;"></div>
+    <div class="particle" style="left:93%; width:3px; height:3px; --dur:12s; --delay:9s;"></div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="logo-wrap">
+      <!-- כדי להוסיף לוגו: שנו את div.logo-placeholder לתגית img עם src="images/logo.png" -->
+      <div class="logo-placeholder" title="הכניסי כאן את הלוגו">
+        לוגו<br>כאן
+      </div>
+      <span class="site-title">אסנת לוי</span>
+    </div>
+
+    <nav aria-label="ניווט ראשי">
+      <ul>
+        <li><a href="index.html">ראשי</a></li>
+        <li><a href="jewelry.html">צורפות</a></li>
+        <li><a href="workshops.html">סדנאות</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <main>
+    <section class="hero">
+
+      <!-- תמונה ראשית -->
+      <div class="hero-image-wrap">
+        <!-- כדי להוסיף תמונה: שנו את div.hero-img-placeholder לתגית img עם src="images/osnat.jpg" -->
+        <div class="hero-img-placeholder" title="הכניסי כאן את התמונה הראשית">
+          <span class="ph-icon">🌊</span>
+          <span>תמונה<br>של אסנת</span>
+        </div>
+      </div>
+
+      <!-- כותרת -->
+      <h1>אסנת לוי</h1>
+      <p class="hero-subtitle">צורפת &nbsp;✦&nbsp; מעצבת תכשיטים</p>
+
+      <!-- קצת על אסנת -->
+      <div class="about-text">
+        <p>
+          אסנת עוסקת בצורפות מזה כ-15 שנה, מעצבת תכשיטים פרי יצירתה,
+          וכן תכשיטים על פי הזמנה אישית.
+        </p>
+        <br>
+        <p>
+          אסנת מרצה בתחום מזה שנים רבות וכיום מעבירה סדנאות ומלמדת
+          בקבוצות קטנות.
+        </p>
+      </div>
+
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- כפתורי ניווט ראשיים -->
+    <section class="cta-section" aria-label="תחומי עיסוק">
+
+      <a href="jewelry.html" class="cta-btn" aria-label="לדף הצורפות">
+        <span class="cta-icon">💍</span>
+        <span class="cta-btn-title">צורפות</span>
+        <span class="cta-btn-desc">תכשיטים בעיצוב אישי<br>והזמנות מיוחדות</span>
+      </a>
+
+      <a href="workshops.html" class="cta-btn" aria-label="לדף הסדנאות">
+        <span class="cta-icon">⚒️</span>
+        <span class="cta-btn-title">סדנאות</span>
+        <span class="cta-btn-desc">סדנאות ולימוד צורפות<br>בקבוצות קטנות</span>
+      </a>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p class="credit">האתר נבנה ע"י ליאורה לוי &mdash; Sea++</p>
+    <p class="rights">כל הזכויות שמורות לאסנת לוי &copy; <span id="year"></span></p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
