@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>אסנת לוי - צורפת</title>
   <meta name="description" content="אסנת לוי - צורפת ומעצבת תכשיטים. תכשיטים בעיצוב אישי וסדנאות צורפות." />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style-v2.css" />
 </head>
 <body>
 
@@ -54,7 +54,79 @@
 
       <!-- כותרת -->
       <h1>אסנת לוי</h1>
-      <p class="hero-subtitle">צורפת &nbsp;✦&nbsp; מעצבת תכשיטים</p>
+      <p class="hero-subtitle">
+        צורפת
+        <svg class="subtitle-gem" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <polygon points="7,1 13,7 7,13 1,7" fill="url(#g1)"/>
+          <polygon points="7,1 13,7 7,6" fill="rgba(255,255,255,0.35)"/>
+          <defs>
+            <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ecf8ff"/>
+              <stop offset="100%" stop-color="#2ec4da"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        מעצבת
+        <svg class="subtitle-gem" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <polygon points="7,1 13,7 7,13 1,7" fill="url(#g2)"/>
+          <polygon points="7,1 13,7 7,6" fill="rgba(255,255,255,0.35)"/>
+          <defs>
+            <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ecf8ff"/>
+              <stop offset="100%" stop-color="#2ec4da"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        מרצה
+      </p>
+
+      <!-- Spatula / burnisher decorative divider -->
+      <div class="spatula-divider" aria-hidden="true">
+        <svg viewBox="0 0 300 28" xmlns="http://www.w3.org/2000/svg">
+          <!-- Left paddle -->
+          <ellipse cx="28" cy="14" rx="22" ry="6.5" fill="url(#padL)"/>
+          <!-- Left rod -->
+          <rect x="50" y="12.5" width="80" height="3" rx="1.5" fill="url(#rodLeft)"/>
+          <!-- Gem bezel (ring) -->
+          <circle cx="150" cy="14" r="8.5" fill="none" stroke="url(#bezGrad)" stroke-width="2.2"/>
+          <!-- Gemstone -->
+          <circle cx="150" cy="14" r="5" fill="url(#gemRed)"/>
+          <ellipse cx="148" cy="11.5" rx="2" ry="1.2" fill="rgba(255,255,255,0.4)" transform="rotate(-20,148,11.5)"/>
+          <!-- Right rod -->
+          <rect x="170" y="12.5" width="80" height="3" rx="1.5" fill="url(#rodRight)"/>
+          <!-- Right paddle -->
+          <ellipse cx="272" cy="14" rx="22" ry="6.5" fill="url(#padR)"/>
+          <defs>
+            <linearGradient id="padL" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#8aacc0"/>
+              <stop offset="50%" stop-color="#ecf8ff"/>
+              <stop offset="100%" stop-color="#8aacc0"/>
+            </linearGradient>
+            <linearGradient id="padR" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#8aacc0"/>
+              <stop offset="50%" stop-color="#ecf8ff"/>
+              <stop offset="100%" stop-color="#8aacc0"/>
+            </linearGradient>
+            <linearGradient id="rodLeft" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#7aaabe"/>
+              <stop offset="100%" stop-color="#2ec4da"/>
+            </linearGradient>
+            <linearGradient id="rodRight" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#2ec4da"/>
+              <stop offset="100%" stop-color="#7aaabe"/>
+            </linearGradient>
+            <linearGradient id="bezGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ecf8ff"/>
+              <stop offset="100%" stop-color="#cce4f8"/>
+            </linearGradient>
+            <radialGradient id="gemRed" cx="40%" cy="35%" r="60%">
+              <stop offset="0%" stop-color="#ff9999"/>
+              <stop offset="50%" stop-color="#cc2222"/>
+              <stop offset="100%" stop-color="#880000"/>
+            </radialGradient>
+          </defs>
+        </svg>
+      </div>
 
       <!-- קצת על אסנת -->
       <div class="about-text">
