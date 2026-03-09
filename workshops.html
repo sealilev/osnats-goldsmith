@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>סדנאות | אסנת לוי</title>
+  <meta name="description" content="סדנאות צורפות בקבוצות קטנות - אסנת לוי" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Floating Particles -->
+  <div class="particles" aria-hidden="true">
+    <div class="particle" style="left:5%;  width:3px; height:3px; --dur:15s; --delay:2s;"></div>
+    <div class="particle" style="left:25%; width:2px; height:2px; --dur:12s; --delay:4s;"></div>
+    <div class="particle" style="left:50%; width:4px; height:4px; --dur:17s; --delay:0s;"></div>
+    <div class="particle" style="left:75%; width:2px; height:2px; --dur:14s; --delay:6s;"></div>
+    <div class="particle" style="left:90%; width:3px; height:3px; --dur:11s; --delay:8s;"></div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="logo-wrap">
+      <div class="logo-placeholder" title="לוגו">לוגו<br>כאן</div>
+      <span class="site-title">אסנת לוי</span>
+    </div>
+    <nav aria-label="ניווט ראשי">
+      <ul>
+        <li><a href="index.html">ראשי</a></li>
+        <li><a href="jewelry.html">צורפות</a></li>
+        <li><a href="workshops.html">סדנאות</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Page Hero -->
+  <main>
+    <section class="page-hero">
+      <h1>סדנאות</h1>
+      <p>לימוד צורפות &nbsp;✦&nbsp; קבוצות קטנות &nbsp;✦&nbsp; חוויה מיוחדת</p>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Coming Soon -->
+    <div class="coming-soon">
+      <span class="cs-icon">⚒️</span>
+      <h2>הסדנאות בדרך אליך</h2>
+      <p>
+        בקרוב תוכלי למצוא כאן את כל המידע על הסדנאות —<br>
+        מועדים, תכנים, ואיך להירשם.
+      </p>
+    </div>
+
+    <a href="index.html" class="back-link" aria-label="חזרה לדף הראשי">
+      &#x2190; חזרה לדף הראשי
+    </a>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p class="credit">האתר נבנה ע"י ליאורה לוי &mdash; Sea++</p>
+    <p class="rights">כל הזכויות שמורות לאסנת לוי &copy; <span id="year"></span></p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
