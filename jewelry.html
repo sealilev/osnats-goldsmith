@@ -10,138 +10,73 @@
     .collections-wrap {
       position: relative;
       z-index: 1;
-      max-width: 1000px;
+      max-width: 900px;
       margin: 0 auto 4rem;
       padding: 0 2rem;
     }
 
-    .collection {
-      margin-bottom: 4rem;
-    }
-
-    .collection-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.4rem, 3vw, 2rem);
-      font-weight: 600;
-      text-align: center;
-      margin-bottom: 2rem;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      color: var(--teal-light);
-    }
-
-    .collection-title::before,
-    .collection-title::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--teal-mid), transparent);
-    }
-
-    .category-grid {
+    .collection-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.2rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
     }
 
-    .category-tile {
+    .collection-tile {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: flex-end;
       text-decoration: none;
       border-radius: 16px;
       border: 1px solid var(--border-glow);
       background: var(--bg-card);
       backdrop-filter: blur(12px);
       overflow: hidden;
-      position: relative;
-      aspect-ratio: 3/4;
       transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
-      cursor: pointer;
     }
 
-    .category-tile::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to top,
-        rgba(8, 100, 128, 0.92) 0%,
-        rgba(8, 100, 128, 0.5) 40%,
-        transparent 70%
-      );
-      z-index: 1;
-      transition: opacity 0.35s;
-    }
-
-    .category-tile:hover {
+    .collection-tile:hover {
       transform: translateY(-6px);
-      box-shadow:
-        0 16px 40px rgba(46, 196, 218, 0.28),
-        0 0 0 1px rgba(46, 196, 218, 0.5);
+      box-shadow: 0 16px 40px rgba(46, 196, 218, 0.28), 0 0 0 1px rgba(46, 196, 218, 0.5);
       border-color: rgba(46, 196, 218, 0.65);
     }
 
-    .tile-img {
-      position: absolute;
-      inset: 0;
+    .tile-img-wrap {
+      width: 100%;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--teal-deep), var(--bg-dark));
+    }
+
+    .tile-img-wrap img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 0.5s ease;
+      display: block;
     }
 
-    .category-tile:hover .tile-img {
+    .collection-tile:hover .tile-img-wrap img {
       transform: scale(1.06);
     }
 
-    .tile-placeholder {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3rem;
-      opacity: 0.25;
-      background: linear-gradient(135deg, var(--teal-deep), var(--bg-dark));
-    }
-
-    .tile-label {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      padding: 1rem 1rem 1.2rem;
+    .tile-content {
+      padding: 1.2rem;
       text-align: center;
     }
 
-    .tile-label span {
+    .tile-title {
       font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       font-weight: 600;
       color: var(--silver-shine);
-      text-shadow: 0 2px 8px rgba(0,0,0,0.6);
-      letter-spacing: 0.04em;
+      letter-spacing: 0.03em;
     }
 
-    .collection-divider {
-      width: 100%;
-      max-width: 400px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--teal-mid), var(--silver-shine), var(--teal-mid), transparent);
-      margin: 0 auto 4rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    @media (max-width: 760px) {
-      .category-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 420px) {
-      .category-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+    @media (max-width: 640px) {
+      .collection-grid {
+        grid-template-columns: 1fr;
+        max-width: 360px;
+        margin: 0 auto;
+      }
     }
   </style>
 </head>
@@ -163,7 +98,7 @@
       <ul>
         <li><a href="index.html">ראשי</a></li>
         <li><a href="jewelry.html">צורפות</a></li>
-        <li><a href="workshops.html">סדנאות</a></li>
+        <li><a href="workshop-jewelry.html">סדנה</a></li>
       </ul>
     </nav>
     <a href="jewelry-en.html" class="lang-toggle" aria-label="Switch to English">
@@ -180,95 +115,39 @@
     <div class="divider"></div>
 
     <div class="collections-wrap">
+      <div class="collection-grid">
 
-      <!-- קולקציה 1: קיאקים וים -->
-      <div class="collection">
-        <h2 class="collection-title">קולקציית קיאקים וים</h2>
-        <div class="category-grid">
-          <a href="category-kayaks-necklaces.html" class="category-tile" aria-label="שרשראות - קיאקים וים">
-            <div class="tile-placeholder">🌊</div>
-            <img src="images/jewelry/kayaks/necklaces/1.jpg" alt="שרשראות" class="tile-img" onerror="this.style.display='none'" />
-            <div class="tile-label"><span>שרשראות</span></div>
-          </a>
-          <a href="category-kayaks-bracelets.html" class="category-tile" aria-label="צמידים - קיאקים וים">
-            <div class="tile-placeholder">🌊</div>
-            <img src="images/jewelry/kayaks/bracelets/1.jpg" alt="צמידים" class="tile-img" onerror="this.style.display='none'" />
-            <div class="tile-label"><span>צמידים</span></div>
-          </a>
-          <a href="category-kayaks-rings.html" class="category-tile" aria-label="טבעות - קיאקים וים">
-            <div class="tile-placeholder">🌊</div>
-            <img src="images/jewelry/kayaks/rings/1.jpg" alt="טבעות" class="tile-img" onerror="this.style.display='none'" />
-            <div class="tile-label"><span>טבעות</span></div>
-          </a>
-          <a href="category-kayaks-custom.html" class="category-tile" aria-label="הזמנות אישיות - קיאקים וים">
-            <div class="tile-placeholder">🌊</div>
-            <img src="images/jewelry/kayaks/custom/1.jpg" alt="הזמנות אישיות" class="tile-img" onerror="this.style.display='none'" />
-            <div class="tile-label"><span>הזמנות אישיות</span></div>
-          </a>
-        </div>
+        <a href="collection-kayaks.html" class="collection-tile" aria-label="קולקציית קיאקים וים">
+          <div class="tile-img-wrap">
+            <img src="images/jewelry/kayaks/1.png" alt="קיאקים וים" onerror="this.style.opacity='0'" />
+          </div>
+          <div class="tile-content">
+            <span class="tile-title">קיאקים וים</span>
+          </div>
+        </a>
+
+        <a href="collection-land.html" class="collection-tile" aria-label="קולקציית עולים ליבשה">
+          <div class="tile-img-wrap">
+            <img src="images/jewelry/land/1.png" alt="עולים ליבשה" onerror="this.style.opacity='0'" />
+          </div>
+          <div class="tile-content">
+            <span class="tile-title">עולים ליבשה</span>
+          </div>
+        </a>
+
+        <a href="collection-moto.html" class="collection-tile" aria-label="קולקציית עולים לשטח">
+          <div class="tile-img-wrap">
+            <img src="images/jewelry/moto/1.png" alt="עולים לשטח" onerror="this.style.opacity='0'" />
+          </div>
+          <div class="tile-content">
+            <span class="tile-title">עולים לשטח – אופנועים</span>
+          </div>
+        </a>
+
       </div>
-
-      <div class="collection-divider"></div>
-
-      <!-- קולקציה 2: עולים ליבשה -->
-      <div class="collection">
-        <h2 class="collection-title">עולים ליבשה</h2>
-        <div class="category-grid">
-          <a href="category-land-necklaces.html" class="category-tile" aria-label="שרשראות - עולים ליבשה">
-            <div class="tile-placeholder">🌿</div>
-            <img src="images/jewelry/land/necklaces/1.jpg" alt="שרשראות" class="tile-img" onerror="this.style.display='none'" />
-            <div class="tile-label"><span>שרשראות</span></div>
-          </a>
-          <a href="category-land-bracelets.html" class="category-tile" aria-label="צמידים - עולים ליבשה">
-            <div class="tile-placeholder">🌿</div>
-            <img src="images/jewelry/land/bracelets/1.jpg" alt="צמידים" class="tile-img" onerror="this.style.display='none'" />
-            <div class="tile-label"><span>צמידים</span></div>
-          </a>
-          <a href="category-land-rings.html" class="category-tile" aria-label="טבעות - עולים ליבשה">
-            <div class="tile-placeholder">🌿</div>
-            <img src="images/jewelry/land/rings/1.jpg" alt="טבעות" class="tile-img" onerror="this.style.display='none'" />
-            <div class="tile-label"><span>טבעות</span></div>
-          </a>
-          <a href="category-land-custom.html" class="category-tile" aria-label="הזמנות אישיות - עולים ליבשה">
-            <div class="tile-placeholder">🌿</div>
-            <img src="images/jewelry/land/custom/1.jpg" alt="הזמנות אישיות" class="tile-img" onerror="this.style.display='none'" />
-            <div class="tile-label"><span>הזמנות אישיות</span></div>
-          </a>
-        </div>
-      </div>
-
-      <div class="collection-divider"></div>
-
-      <!-- קולקציה 3: עולים לשטח – אופנועים -->
-      <div class="collection">
-        <h2 class="collection-title">עולים לשטח – אופנועים</h2>
-        <div class="category-grid">
-          <a href="category-moto-necklaces.html" class="category-tile" aria-label="שרשראות - אופנועים">
-            <div class="tile-placeholder">🏍️</div>
-            <img src="images/jewelry/moto/necklaces/1.jpg" alt="שרשראות" class="tile-img" onerror="this.style.display='none'" />
-            <div class="tile-label"><span>שרשראות</span></div>
-          </a>
-          <a href="category-moto-bracelets.html" class="category-tile" aria-label="צמידים - אופנועים">
-            <div class="tile-placeholder">🏍️</div>
-            <img src="images/jewelry/moto/bracelets/1.jpg" alt="צמידים" class="tile-img" onerror="this.style.display='none'" />
-            <div class="tile-label"><span>צמידים</span></div>
-          </a>
-          <a href="category-moto-rings.html" class="category-tile" aria-label="טבעות - אופנועים">
-            <div class="tile-placeholder">🏍️</div>
-            <img src="images/jewelry/moto/rings/1.jpg" alt="טבעות" class="tile-img" onerror="this.style.display='none'" />
-            <div class="tile-label"><span>טבעות</span></div>
-          </a>
-          <a href="category-moto-custom.html" class="category-tile" aria-label="הזמנות אישיות - אופנועים">
-            <div class="tile-placeholder">🏍️</div>
-            <img src="images/jewelry/moto/custom/1.jpg" alt="הזמנות אישיות" class="tile-img" onerror="this.style.display='none'" />
-            <div class="tile-label"><span>הזמנות אישיות</span></div>
-          </a>
-        </div>
-      </div>
-
     </div>
 
-    <a href="index.html" class="back-link" aria-label="חזרה לדף הראשי">
+    <a href="index.html" class="back-link">
       &#x2190; חזרה לדף הראשי
     </a>
   </main>
