@@ -1,0 +1,82 @@
+name: Generate Image Catalog
+
+on:
+  push:
+    paths:
+      - 'images/jewelry/**'
+
+jobs:
+  generate-catalog:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Generate catalog.json
+        run: |
+          python3 << 'EOF'
+          import os
+          import json
+
+          collections = {
+              'kayaks': 'קיאקים וים',
+              'land': 'עולים ליבשה',
+              'moto': 'עולים לשטח'
+          }
+          categories = {
+              'necklaces': 'שרשראות',
+              'bracelets': 'צמידים',
+              'rings': 'טבעות',
+              'custom': 'הזמנות אישיות'
+          }
+
+          catalog = {}
+
+          for col_key in collections:
+              catalog[col_key] = {}
+              for cat_key in categories:
+                  folder = f'images/jewelry/{col_key}/{cat_key}'
+                  items = []
+                  if os.path.isdir(folder):
+                      files = sorted([
+                          f for f in os.listdir(folder)
+                          if f.lower().endswith(('.jpg', '.jpeg', '.png', '.webp'))
+                      ])
+                      for filename in files:
+                          base = os.path.splitext(filename)[0]
+                          # Format: שם-התכשיט_מחיר  e.g. חתירה-לתוך-השקט_350
+                          if '_' in base:
+                              parts = base.rsplit('_', 1)
+                              name = parts[0].replace('-', ' ')
+                              try:
+                                  price = int(parts[1])
+                              except ValueError:
+                                  price = None
+                          else:
+                              name = base.replace('-', ' ')
+                              price = None
+
+                          items.append({
+                              'file': filename,
+                              'path': f'{folder}/{filename}',
+                              'name': name,
+                              'price': price
+                          })
+                  catalog[col_key][cat_key] = items
+
+          with open('catalog.json', 'w', encoding='utf-8') as f:
+              json.dump(catalog, f, ensure_ascii=False, indent=2)
+
+          print('catalog.json generated successfully')
+          EOF
+
+      - name: Commit catalog.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add catalog.json
+          git diff --staged --quiet || git commit -m "Update catalog.json"
+          git push
