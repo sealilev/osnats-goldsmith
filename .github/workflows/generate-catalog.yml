@@ -1,6 +1,7 @@
 name: Generate Image Catalog
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - 'images/jewelry/**'
