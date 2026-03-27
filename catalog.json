@@ -1,14 +1,60 @@
 {
   "kayaks": {
-    "necklaces": [],
+    "necklaces": [
+      {
+        "file": "חדורת-מטרה_400.jpg",
+        "path": "images/jewelry/kayaks/necklaces/חדורת-מטרה_400.jpg",
+        "name": "חדורת מטרה",
+        "price": 400
+      },
+      {
+        "file": "חותר-אל-היעד_360.jpg",
+        "path": "images/jewelry/kayaks/necklaces/חותר-אל-היעד_360.jpg",
+        "name": "חותר אל היעד",
+        "price": 360
+      },
+      {
+        "file": "חתירה-לתוך-השקט_350.jpg",
+        "path": "images/jewelry/kayaks/necklaces/חתירה-לתוך-השקט_350.jpg",
+        "name": "חתירה לתוך השקט",
+        "price": 350
+      },
+      {
+        "file": "עפה-על-הים_370.jpg",
+        "path": "images/jewelry/kayaks/necklaces/עפה-על-הים_370.jpg",
+        "name": "עפה על הים",
+        "price": 370
+      }
+    ],
     "bracelets": [],
     "rings": [],
     "custom": []
   },
   "land": {
-    "necklaces": [],
-    "bracelets": [],
-    "rings": [],
+    "necklaces": [
+      {
+        "file": "לנפש-פנימה_470.jpg",
+        "path": "images/jewelry/land/necklaces/לנפש-פנימה_470.jpg",
+        "name": "לנפש פנימה",
+        "price": 470
+      }
+    ],
+    "bracelets": [
+      {
+        "file": "אהבת-אמת_420.jpg",
+        "path": "images/jewelry/land/bracelets/אהבת-אמת_420.jpg",
+        "name": "אהבת אמת",
+        "price": 420
+      }
+    ],
+    "rings": [
+      {
+        "file": "לנצח-יחד_690.jpg",
+        "path": "images/jewelry/land/rings/לנצח-יחד_690.jpg",
+        "name": "לנצח יחד",
+        "price": 690
+      }
+    ],
     "custom": []
   },
   "moto": {
