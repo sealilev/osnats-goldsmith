@@ -622,7 +622,7 @@ body.ltr .about-text::before {
 /* ===============================
    RESPONSIVE
    =============================== */
-@media (max-width: 640px) {
+@media (max-width: 640px){
   header {
     flex-direction: row;
     flex-wrap: wrap;
@@ -646,7 +646,7 @@ body.ltr .about-text::before {
   nav a {
     font-size: 0.8rem;
   }
-}
+
 
   .hero-image-wrap {
     width: 240px;
@@ -682,5 +682,5 @@ body.ltr .about-text::before {
   align-items: flex-start;
   gap: 0.8rem;
   }
-  
-}
+} 
+
