@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kayaks & Sea | Osnat Levy</title>
-  <meta name="description" content="Kayaks & Sea collection - custom jewelry, Osnat Levy" />
+  <meta name="description" content="Kayaks & Sea collection - Osnat Levy Goldsmith" />
   <link rel="stylesheet" href="style-v2.css" />
   <style>
 
@@ -79,21 +79,41 @@
       background: linear-gradient(90deg, var(--teal-mid), transparent);
     }
 
-    /* ---- Photo grid ---- */
+    /* ---- Photo scroll row ---- */
     .photo-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      display: flex;
+      flex-direction: row;
       gap: 0.8rem;
+      overflow-x: auto;
+      padding-bottom: 0.8rem;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .photo-grid::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    .photo-grid::-webkit-scrollbar-track {
+      background: rgba(255,255,255,0.05);
+      border-radius: 2px;
+    }
+
+    .photo-grid::-webkit-scrollbar-thumb {
+      background: var(--teal-mid);
+      border-radius: 2px;
     }
 
     .photo-item {
-      aspect-ratio: 1;
+      flex: 0 0 200px;
+      height: 200px;
       border-radius: 10px;
       overflow: hidden;
       border: 1px solid var(--border-glow);
       background: linear-gradient(135deg, var(--teal-deep), var(--bg-dark));
       cursor: pointer;
       transition: transform 0.3s, box-shadow 0.3s;
+      scroll-snap-align: start;
     }
 
     .photo-item:hover {
@@ -124,6 +144,7 @@
       justify-content: center;
       align-items: center;
       padding: 2rem;
+      gap: 2rem;
     }
 
     .lightbox.open {
@@ -131,11 +152,52 @@
     }
 
     .lightbox img {
-      max-width: 90vw;
-      max-height: 85vh;
+      max-width: 55vw;
+      max-height: 80vh;
       object-fit: contain;
       border-radius: 12px;
       box-shadow: 0 0 60px rgba(0,0,0,0.8);
+    }
+
+    .lb-info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+      min-width: 200px;
+    }
+
+    .lb-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--silver-shine);
+    }
+
+    .lb-price {
+      font-size: 1.2rem;
+      color: var(--teal-bright);
+      font-weight: 500;
+    }
+
+    .lb-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+      background: linear-gradient(135deg, #25d366, #128c7e);
+      color: white;
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding: 0.7rem 1.5rem;
+      border-radius: 50px;
+      box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
+      transition: transform 0.3s, box-shadow 0.3s;
+      white-space: nowrap;
+    }
+
+    .lb-whatsapp:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
     }
 
     .lightbox-close {
@@ -189,9 +251,12 @@
     }
 
     @media (max-width: 640px) {
-      .photo-grid { grid-template-columns: repeat(2, 1fr); }
+      .photo-item { flex: 0 0 150px; height: 150px; }
       .cat-nav { gap: 0.3rem; padding: 0.6rem 1rem; }
       .cat-nav a { font-size: 0.78rem; padding: 0.3rem 0.7rem; }
+      .lightbox { flex-direction: column; padding: 1rem; }
+      .lightbox img { max-width: 90vw; max-height: 50vh; }
+      .lb-info { align-items: center; }
     }
   </style>
 </head>
@@ -205,8 +270,8 @@
 
   <header>
     <div class="logo-wrap">
-      <img src="images/logo.png" alt="לוגו אסנת לוי" class="logo-img" />
-      <span class="site-title">אסנת לוי</span>
+      <img src="images/logo.png" alt="Osnat Levy Logo" class="logo-img" />
+      <span class="site-title">Osnat Levy</span>
     </div>
     <nav aria-label="Main navigation">
       <ul>
@@ -220,7 +285,15 @@
     </a>
   </header>
 
- 
+  <!-- תפריט קטגוריות עוגנים -->
+  <div class="cat-nav-wrap">
+    <nav class="cat-nav" aria-label="קטגוריות">
+      <a href="#necklaces">שרשראות</a>
+      <a href="#bracelets">צמידים</a>
+      <a href="#rings">טבעות</a>
+      <a href="#custom">הזמנות אישיות</a>
+    </nav>
+  </div>
 
   <main>
     <section class="page-hero">
@@ -235,45 +308,25 @@
       <!-- שרשראות -->
       <section class="cat-section" id="necklaces">
         <h2>Necklaces</h2>
-        <div class="photo-grid" data-category="necklaces">
-          <div class="photo-item" data-src="images/jewelry/kayaks/necklaces/1.jpg"><img src="images/jewelry/kayaks/necklaces/1.jpg" alt="Necklace 1" onerror="this.parentElement.style.opacity='0.3'" /></div>
-          <div class="photo-item" data-src="images/jewelry/kayaks/necklaces/2.jpg"><img src="images/jewelry/kayaks/necklaces/2.jpg" alt="Necklace 2" onerror="this.parentElement.style.opacity='0.3'" /></div>
-          <div class="photo-item" data-src="images/jewelry/kayaks/necklaces/3.jpg"><img src="images/jewelry/kayaks/necklaces/3.jpg" alt="Necklace 3" onerror="this.parentElement.style.opacity='0.3'" /></div>
-          <div class="photo-item" data-src="images/jewelry/kayaks/necklaces/4.jpg"><img src="images/jewelry/kayaks/necklaces/4.jpg" alt="Necklace 4" onerror="this.parentElement.style.opacity='0.3'" /></div>
-        </div>
+        <div class="photo-grid" id="grid-necklaces"></div>
       </section>
 
       <!-- צמידים -->
       <section class="cat-section" id="bracelets">
         <h2>Bracelets</h2>
-        <div class="photo-grid" data-category="bracelets">
-          <div class="photo-item" data-src="images/jewelry/kayaks/bracelets/1.jpg"><img src="images/jewelry/kayaks/bracelets/1.jpg" alt="Bracelet 1" onerror="this.parentElement.style.opacity='0.3'" /></div>
-          <div class="photo-item" data-src="images/jewelry/kayaks/bracelets/2.jpg"><img src="images/jewelry/kayaks/bracelets/2.jpg" alt="Bracelet 2" onerror="this.parentElement.style.opacity='0.3'" /></div>
-          <div class="photo-item" data-src="images/jewelry/kayaks/bracelets/3.jpg"><img src="images/jewelry/kayaks/bracelets/3.jpg" alt="Bracelet 3" onerror="this.parentElement.style.opacity='0.3'" /></div>
-          <div class="photo-item" data-src="images/jewelry/kayaks/bracelets/4.jpg"><img src="images/jewelry/kayaks/bracelets/4.jpg" alt="Bracelet 4" onerror="this.parentElement.style.opacity='0.3'" /></div>
-        </div>
+        <div class="photo-grid" id="grid-bracelets"></div>
       </section>
 
       <!-- טבעות -->
       <section class="cat-section" id="rings">
         <h2>Rings</h2>
-        <div class="photo-grid" data-category="rings">
-          <div class="photo-item" data-src="images/jewelry/kayaks/rings/1.jpg"><img src="images/jewelry/kayaks/rings/1.jpg" alt="Ring 1" onerror="this.parentElement.style.opacity='0.3'" /></div>
-          <div class="photo-item" data-src="images/jewelry/kayaks/rings/2.jpg"><img src="images/jewelry/kayaks/rings/2.jpg" alt="Ring 2" onerror="this.parentElement.style.opacity='0.3'" /></div>
-          <div class="photo-item" data-src="images/jewelry/kayaks/rings/3.jpg"><img src="images/jewelry/kayaks/rings/3.jpg" alt="Ring 3" onerror="this.parentElement.style.opacity='0.3'" /></div>
-          <div class="photo-item" data-src="images/jewelry/kayaks/rings/4.jpg"><img src="images/jewelry/kayaks/rings/4.jpg" alt="Ring 4" onerror="this.parentElement.style.opacity='0.3'" /></div>
-        </div>
+        <div class="photo-grid" id="grid-rings"></div>
       </section>
 
       <!-- הזמנות אישיות -->
       <section class="cat-section" id="custom">
         <h2>Custom Orders</h2>
-        <div class="photo-grid" data-category="custom">
-          <div class="photo-item" data-src="images/jewelry/kayaks/custom/1.jpg"><img src="images/jewelry/kayaks/custom/1.jpg" alt="Custom order 1" onerror="this.parentElement.style.opacity='0.3'" /></div>
-          <div class="photo-item" data-src="images/jewelry/kayaks/custom/2.jpg"><img src="images/jewelry/kayaks/custom/2.jpg" alt="Custom order 2" onerror="this.parentElement.style.opacity='0.3'" /></div>
-          <div class="photo-item" data-src="images/jewelry/kayaks/custom/3.jpg"><img src="images/jewelry/kayaks/custom/3.jpg" alt="Custom order 3" onerror="this.parentElement.style.opacity='0.3'" /></div>
-          <div class="photo-item" data-src="images/jewelry/kayaks/custom/4.jpg"><img src="images/jewelry/kayaks/custom/4.jpg" alt="Custom order 4" onerror="this.parentElement.style.opacity='0.3'" /></div>
-        </div>
+        <div class="photo-grid" id="grid-custom"></div>
       </section>
 
     </div>
@@ -288,6 +341,13 @@
     <button class="lightbox-close" id="lb-close" aria-label="Close">✕</button>
     <button class="lightbox-prev" id="lb-prev" aria-label="Previous">&#x2039;</button>
     <img id="lb-img" src="" alt="Enlarged image" />
+    <div class="lb-info">
+      <div class="lb-name" id="lb-name"></div>
+      <div class="lb-price" id="lb-price"></div>
+      <a class="lb-whatsapp" id="lb-whatsapp" href="#" target="_blank" rel="noopener noreferrer">
+        💬 Send me a WhatsApp
+      </a>
+    </div>
     <button class="lightbox-next" id="lb-next" aria-label="Next">&#x203a;</button>
   </div>
 
@@ -299,16 +359,36 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    const COLLECTION = 'kayaks';
+    const CATEGORIES = {
+      necklaces: 'שרשראות',
+      bracelets: 'צמידים',
+      rings: 'טבעות',
+      custom: 'הזמנות אישיות'
+    };
+
     // Lightbox
     const lightbox = document.getElementById('lightbox');
     const lbImg = document.getElementById('lb-img');
+    const lbName = document.getElementById('lb-name');
+    const lbPrice = document.getElementById('lb-price');
+    const lbWhatsapp = document.getElementById('lb-whatsapp');
     let allItems = [];
     let currentIndex = 0;
+
+    function updateLightbox() {
+      const item = allItems[currentIndex];
+      lbImg.src = item.dataset.src;
+      lbName.textContent = item.dataset.name || '';
+      lbPrice.textContent = item.dataset.price ? item.dataset.price + ' NIS' : '';
+      const msg = encodeURIComponent('Hi Osnat, I am interested in ' + (item.dataset.name || 'תכשיט') + (item.dataset.price ? ' (price: ' + item.dataset.price + ' NIS)' : ''));
+      lbWhatsapp.href = 'https://wa.me/972523744408?text=' + msg;
+    }
 
     function openLightbox(items, index) {
       allItems = items;
       currentIndex = index;
-      lbImg.src = allItems[currentIndex].dataset.src;
+      updateLightbox();
       lightbox.classList.add('open');
       document.body.style.overflow = 'hidden';
     }
@@ -320,31 +400,18 @@
 
     function showPrev() {
       currentIndex = (currentIndex - 1 + allItems.length) % allItems.length;
-      lbImg.src = allItems[currentIndex].dataset.src;
+      updateLightbox();
     }
 
     function showNext() {
       currentIndex = (currentIndex + 1) % allItems.length;
-      lbImg.src = allItems[currentIndex].dataset.src;
+      updateLightbox();
     }
-
-    document.querySelectorAll('.photo-item').forEach(item => {
-      item.addEventListener('click', () => {
-        const grid = item.closest('.photo-grid');
-        const items = Array.from(grid.querySelectorAll('.photo-item'));
-        const index = items.indexOf(item);
-        openLightbox(items, index);
-      });
-    });
 
     document.getElementById('lb-close').addEventListener('click', closeLightbox);
     document.getElementById('lb-prev').addEventListener('click', showPrev);
     document.getElementById('lb-next').addEventListener('click', showNext);
-
-    lightbox.addEventListener('click', e => {
-      if (e.target === lightbox) closeLightbox();
-    });
-
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
     document.addEventListener('keydown', e => {
       if (!lightbox.classList.contains('open')) return;
       if (e.key === 'Escape') closeLightbox();
@@ -352,21 +419,55 @@
       if (e.key === 'ArrowLeft') showPrev();
     });
 
-    // Active anchor highlight in cat-nav
-    const sections = document.querySelectorAll('.cat-section');
-    const navLinks = document.querySelectorAll('.cat-nav a');
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          navLinks.forEach(a => a.classList.remove('active'));
-          const active = document.querySelector(`.cat-nav a[href="#${entry.target.id}"]`);
-          if (active) active.classList.add('active');
-        }
+    // Build gallery from catalog.json
+    function buildGrid(catKey, items) {
+      const grid = document.getElementById('grid-' + catKey);
+      if (!grid) return;
+      grid.innerHTML = '';
+      if (!items || items.length === 0) {
+        grid.closest('.cat-section').style.display = 'none';
+        return;
+      }
+      items.forEach((item, i) => {
+        const div = document.createElement('div');
+        div.className = 'photo-item';
+        div.dataset.src = item.path;
+        div.dataset.name = item.name || '';
+        div.dataset.price = item.price || '';
+        const img = document.createElement('img');
+        img.src = item.path;
+        img.alt = item.name || '';
+        img.onerror = () => div.style.opacity = '0.3';
+        div.appendChild(img);
+        div.addEventListener('click', () => {
+          const allDivs = Array.from(grid.querySelectorAll('.photo-item'));
+          openLightbox(allDivs, allDivs.indexOf(div));
+        });
+        grid.appendChild(div);
       });
-    }, { threshold: 0.3 });
+    }
 
-    sections.forEach(s => observer.observe(s));
+    fetch('catalog.json')
+      .then(r => r.json())
+      .then(catalog => {
+        const col = catalog[COLLECTION] || {};
+        Object.keys(CATEGORIES).forEach(cat => buildGrid(cat, col[cat]));
+
+        // Active anchor highlight
+        const sections = document.querySelectorAll('.cat-section');
+        const navLinks = document.querySelectorAll('.cat-nav a');
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              navLinks.forEach(a => a.classList.remove('active'));
+              const active = document.querySelector(`.cat-nav a[href="#${entry.target.id}"]`);
+              if (active) active.classList.add('active');
+            }
+          });
+        }, { threshold: 0.3 });
+        sections.forEach(s => observer.observe(s));
+      })
+      .catch(() => console.warn('catalog.json not found'));
   </script>
 </body>
 </html>
