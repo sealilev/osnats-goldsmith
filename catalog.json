@@ -45,6 +45,12 @@
         "path": "images/jewelry/land/bracelets/אהבת-אמת_420.jpg",
         "name": "אהבת אמת",
         "price": 420
+      },
+      {
+        "file": "אהבת-אמת_True-Love_420.jpg",
+        "path": "images/jewelry/land/bracelets/אהבת-אמת_True-Love_420.jpg",
+        "name": "אהבת אמת_True Love",
+        "price": 420
       }
     ],
     "rings": [
