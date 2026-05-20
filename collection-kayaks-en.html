@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kayaks & Sea | Osnat Levy</title>
   <meta name="description" content="Kayaks & Sea collection - Osnat Levy Goldsmith" />
-  <link rel="stylesheet" href="style-v2.css" />
+  <link rel="stylesheet" href="css/style-v2.css" />
   <style>
 
     /* ---- Sticky category nav ---- */
@@ -432,7 +432,7 @@
         const div = document.createElement('div');
         div.className = 'photo-item';
         div.dataset.src = item.path;
-        div.dataset.name = item.name || '';
+        div.dataset.name = item.name_en || item.name || '';
         div.dataset.price = item.price || '';
         const img = document.createElement('img');
         img.src = item.path;

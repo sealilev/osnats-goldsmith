@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>עולים ליבשה | אסנת לוי</title>
   <meta name="description" content="קולקציית קיאקים וים - תכשיטים בעיצוב אישי, אסנת לוי" />
-  <link rel="stylesheet" href="style-v2.css" />
+  <link rel="stylesheet" href="css/style-v2.css" />
   <style>
 
     /* ---- Sticky category nav ---- */
@@ -285,7 +285,15 @@
     </a>
   </header>
 
-
+  <!-- תפריט קטגוריות עוגנים -->
+  <div class="cat-nav-wrap">
+    <nav class="cat-nav" aria-label="קטגוריות">
+      <a href="#necklaces">שרשראות</a>
+      <a href="#bracelets">צמידים</a>
+      <a href="#rings">טבעות</a>
+      <a href="#custom">הזמנות אישיות</a>
+    </nav>
+  </div>
 
   <main>
     <section class="page-hero">
@@ -336,6 +344,8 @@
     <div class="lb-info">
       <div class="lb-name" id="lb-name"></div>
       <div class="lb-price" id="lb-price"></div>
+      <div class="lb-size" id="lb-size"></div>
+      <div class="lb-size" id="lb-size"></div>
       <a class="lb-whatsapp" id="lb-whatsapp" href="#" target="_blank" rel="noopener noreferrer">
         💬 שלחי לי ווצאפ
       </a>
@@ -372,6 +382,8 @@
       const item = allItems[currentIndex];
       lbImg.src = item.dataset.src;
       lbName.textContent = item.dataset.name || '';
+      const lbSize = document.getElementById('lb-size');
+      if (lbSize) lbSize.textContent = item.dataset.size || '';
       lbPrice.textContent = item.dataset.price ? item.dataset.price + ' ש"ח' : '';
       const msg = encodeURIComponent('היי אסנת, אני מעוניינ.ת ב' + (item.dataset.name || 'תכשיט') + (item.dataset.price ? ' (מחיר: ' + item.dataset.price + ' ש"ח)' : ''));
       lbWhatsapp.href = 'https://wa.me/972523744408?text=' + msg;
@@ -426,6 +438,7 @@
         div.dataset.src = item.path;
         div.dataset.name = item.name || '';
         div.dataset.price = item.price || '';
+        div.dataset.size = item.size || '';
         const img = document.createElement('img');
         img.src = item.path;
         img.alt = item.name || '';
