@@ -159,18 +159,25 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      min-height: 1.2em;
     }
 
-    .item-price {
-      font-size: 0.85rem;
-      color: var(--teal-bright);
-      font-weight: 500;
+    .item-size-price {
+      display: flex;
+      gap: 0.5rem;
+      align-items: baseline;
+      min-height: 1.1em;
+      font-size: 0.82rem;
     }
 
     .item-size {
-      font-size: 0.78rem;
       color: var(--text-muted);
       font-style: italic;
+    }
+
+    .item-price {
+      color: var(--teal-bright);
+      font-weight: 500;
     }
 
     .item-whatsapp {
@@ -276,22 +283,21 @@
     .lb-whatsapp {
       display: inline-flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.4rem;
       text-decoration: none;
       background: linear-gradient(135deg, #25d366, #128c7e);
       color: white;
-      font-size: 0.95rem;
+      font-size: 0.78rem;
       font-weight: 500;
-      padding: 0.7rem 1.5rem;
-      border-radius: 50px;
-      box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
-      transition: transform 0.3s, box-shadow 0.3s;
+      padding: 0.35rem 0.7rem;
+      border-radius: 20px;
+      transition: transform 0.2s, box-shadow 0.2s;
       white-space: nowrap;
     }
 
     .lb-whatsapp:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
     }
 
     .lightbox-close {
@@ -379,16 +385,6 @@
     </a>
   </header>
 
-  <!-- תפריט קטגוריות עוגנים -->
-  <div class="cat-nav-wrap">
-    <nav class="cat-nav" aria-label="קטגוריות">
-      <a href="#necklaces">שרשראות</a>
-      <a href="#bracelets">צמידים</a>
-      <a href="#rings">טבעות</a>
-      <a href="#custom">הזמנות אישיות</a>
-    </nav>
-  </div>
-
   <main>
     <section class="page-hero">
       <h1>קיאקים וים</h1>
@@ -440,7 +436,7 @@
       <div class="lb-price" id="lb-price"></div>
       <div class="lb-size" id="lb-size"></div>
       <a class="lb-whatsapp" id="lb-whatsapp" href="#" target="_blank" rel="noopener noreferrer">
-        💬 שלחי לי ווצאפ
+        💬 שליחת ווצאפ
       </a>
     </div>
     <button class="lightbox-next" id="lb-next" aria-label="הבא">&#x203a;</button>
@@ -558,19 +554,22 @@
           info.appendChild(name);
         }
 
-        if (item.price) {
-          const price = document.createElement('div');
-          price.className = 'item-price';
-          price.textContent = item.price + ' ש"ח';
-          info.appendChild(price);
-        }
-
+        // Size + price on same row
+        const sizePriceRow = document.createElement('div');
+        sizePriceRow.className = 'item-size-price';
         if (item.size) {
-          const size = document.createElement('div');
+          const size = document.createElement('span');
           size.className = 'item-size';
           size.textContent = item.size;
-          info.appendChild(size);
+          sizePriceRow.appendChild(size);
         }
+        if (item.price) {
+          const price = document.createElement('span');
+          price.className = 'item-price';
+          price.textContent = item.price + ' ש"ח';
+          sizePriceRow.appendChild(price);
+        }
+        info.appendChild(sizePriceRow);
 
         // WhatsApp button
         const wa = document.createElement('a');
