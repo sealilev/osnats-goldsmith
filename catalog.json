@@ -13,11 +13,13 @@
         "name": "חותר אל היעד",
         "price": 360
       },
-      {
-        "file": "חתירה-לתוך-השקט_350.jpg",
-        "path": "images/jewelry/kayaks/necklaces/חתירה-לתוך-השקט_350.jpg",
+     {
+        "file": "חתירה-לתוך-השקט_Paddling-into-Stillness_350.jpg",
+        "path": "images/jewelry/kayaks/necklaces/חתירה-לתוך-השקט_Paddling-into-Stillness_350.jpg",
         "name": "חתירה לתוך השקט",
-        "price": 350
+        "name_en": "Paddling into Stillness",
+        "price": 350,
+        "size": "אורך 45 ס\"מ"
       },
       {
         "file": "עפה-על-הים_370.jpg",
