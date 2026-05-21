@@ -2,9 +2,57 @@
   "kayaks": {
     "necklaces": [
       {
+        "file": "הגולש בקאייק.jpeg",
+        "path": "images/jewelry/kayaks/necklaces/הגולש בקאייק.jpeg",
+        "name": "הגולש בקאייק",
+        "price": null
+      },
+      {
         "file": "החותר.jpeg",
         "path": "images/jewelry/kayaks/necklaces/החותר.jpeg",
         "name": "החותר",
+        "price": null
+      },
+      {
+        "file": "החותרת למרחקים.jpeg",
+        "path": "images/jewelry/kayaks/necklaces/החותרת למרחקים.jpeg",
+        "name": "החותרת למרחקים",
+        "price": null
+      },
+      {
+        "file": "החותרת רחוק.jpeg",
+        "path": "images/jewelry/kayaks/necklaces/החותרת רחוק.jpeg",
+        "name": "החותרת רחוק",
+        "price": null
+      },
+      {
+        "file": "הספיסטית.jpeg",
+        "path": "images/jewelry/kayaks/necklaces/הספיסטית.jpeg",
+        "name": "הספיסטית",
+        "price": null
+      },
+      {
+        "file": "חדורת מטרה.jpg",
+        "path": "images/jewelry/kayaks/necklaces/חדורת מטרה.jpg",
+        "name": "חדורת מטרה",
+        "price": null
+      },
+      {
+        "file": "חותר אל היעד.jpg",
+        "path": "images/jewelry/kayaks/necklaces/חותר אל היעד.jpg",
+        "name": "חותר אל היעד",
+        "price": null
+      },
+      {
+        "file": "חותרת הסרפסק.jpeg",
+        "path": "images/jewelry/kayaks/necklaces/חותרת הסרפסק.jpeg",
+        "name": "חותרת הסרפסק",
+        "price": null
+      },
+      {
+        "file": "חתירה אל השקט.jpg",
+        "path": "images/jewelry/kayaks/necklaces/חתירה אל השקט.jpg",
+        "name": "חתירה אל השקט",
         "price": null
       }
     ],
