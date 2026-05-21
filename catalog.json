@@ -2,12 +2,6 @@
   "kayaks": {
     "necklaces": [
       {
-        "file": "חותר-אל-היעד_360.jpg",
-        "path": "images/jewelry/kayaks/necklaces/חותר-אל-היעד_360.jpg",
-        "name": "חותר אל היעד",
-        "price": 360
-      },
-      {
         "file": "חתירה-לתוך-השקט_350.jpg",
         "path": "images/jewelry/kayaks/necklaces/חתירה-לתוך-השקט_350.jpg",
         "name": "חתירה לתוך השקט",
