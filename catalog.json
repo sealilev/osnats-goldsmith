@@ -63,10 +63,22 @@
   "land": {
     "necklaces": [
       {
+        "file": "לנפש פנימה.jpg",
+        "path": "images/jewelry/land/necklaces/לנפש פנימה.jpg",
+        "name": "לנפש פנימה",
+        "price": null
+      },
+      {
         "file": "לנפש-פנימה_470.jpg",
         "path": "images/jewelry/land/necklaces/לנפש-פנימה_470.jpg",
         "name": "לנפש פנימה",
         "price": 470
+      },
+      {
+        "file": "מצפן.jpeg",
+        "path": "images/jewelry/land/necklaces/מצפן.jpeg",
+        "name": "מצפן",
+        "price": null
       }
     ],
     "bracelets": [
