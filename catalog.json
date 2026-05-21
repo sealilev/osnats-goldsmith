@@ -2,64 +2,77 @@
   "kayaks": {
     "necklaces": [
       {
-        "file": "הגולש בקאייק.jpeg",
-        "path": "images/jewelry/kayaks/necklaces/הגולש בקאייק.jpeg",
-        "name": "הגולש בקאייק",
-        "price": null
+        "file": "הספיסטית.jpeg",
+        "path": "images/jewelry/kayaks/necklaces/הספיסטית.jpeg",
+        "name": "הספיסטית",
+        "name_en": "The Spontaneous One",
+        "price": 300,
+        "size": "אורך, רוחב 2.7, 2.6",
+        "size_en": "length x width 2.7, 2.6"
       },
       {
         "file": "הגולש בקיאק.jpeg",
         "path": "images/jewelry/kayaks/necklaces/הגולש בקיאק.jpeg",
         "name": "הגולש בקיאק",
-        "price": null
+        "name_en": "The Kayak Surfer",
+        "price": 300,
+        "size": "קוטר ס\"מ 3",
+        "size_en": "diameter cm 3"
       },
       {
         "file": "החותר.jpeg",
         "path": "images/jewelry/kayaks/necklaces/החותר.jpeg",
         "name": "החותר",
-        "price": null
+        "name_en": "The Paddler",
+        "price": 300,
+        "size": "קוטר ס\"מ 3",
+        "size_en": "diameter cm 3"
       },
       {
         "file": "החותרת למרחקים.jpeg",
         "path": "images/jewelry/kayaks/necklaces/החותרת למרחקים.jpeg",
         "name": "החותרת למרחקים",
-        "price": null
+        "name_en": "Paddling into the Distance",
+        "price": 280,
+        "size": "קוטר ס\"מ 2.8",
+        "size_en": "diameter cm 2.8"
+      },
+      {
+        "file": "חותרת הסרפסקי.jpeg",
+        "path": "images/jewelry/kayaks/necklaces/חותרת הסרפסקי.jpeg",
+        "name": "חותרת הסרפסקי",
+        "name_en": "The Surfski Paddler",
+        "price": 300,
+        "size": "קוטר ס\"מ 3",
+        "size_en": "diameter cm 3"
       },
       {
         "file": "החותרת רחוק.jpeg",
         "path": "images/jewelry/kayaks/necklaces/החותרת רחוק.jpeg",
         "name": "החותרת רחוק",
-        "price": null
-      },
-      {
-        "file": "הספיסטית.jpeg",
-        "path": "images/jewelry/kayaks/necklaces/הספיסטית.jpeg",
-        "name": "הספיסטית",
-        "price": null
-      },
-      {
-        "file": "חדורת מטרה.jpg",
-        "path": "images/jewelry/kayaks/necklaces/חדורת מטרה.jpg",
-        "name": "חדורת מטרה",
-        "price": null
-      },
-      {
-        "file": "חותר אל היעד.jpg",
-        "path": "images/jewelry/kayaks/necklaces/חותר אל היעד.jpg",
-        "name": "חותר אל היעד",
-        "price": null
-      },
-      {
-        "file": "חותרת הסרפסק.jpeg",
-        "path": "images/jewelry/kayaks/necklaces/חותרת הסרפסק.jpeg",
-        "name": "חותרת הסרפסק",
-        "price": null
+        "name_en": "Paddling Far",
+        "price": 300
       },
       {
         "file": "חתירה אל השקט.jpg",
         "path": "images/jewelry/kayaks/necklaces/חתירה אל השקט.jpg",
         "name": "חתירה אל השקט",
-        "price": null
+        "name_en": "Rowing into Stillness",
+        "price": 350
+      },
+      {
+        "file": "חותר אל היעד.jpg",
+        "path": "images/jewelry/kayaks/necklaces/חותר אל היעד.jpg",
+        "name": "חותר אל היעד",
+        "name_en": "Rowing Toward the Goal",
+        "price": 360
+      },
+      {
+        "file": "חדורת מטרה.jpg",
+        "path": "images/jewelry/kayaks/necklaces/חדורת מטרה.jpg",
+        "name": "חדורת מטרה",
+        "name_en": "Driven with Purpose",
+        "price": 400
       }
     ],
     "bracelets": [],
@@ -69,22 +82,20 @@
   "land": {
     "necklaces": [
       {
-        "file": "לנפש פנימה.jpg",
-        "path": "images/jewelry/land/necklaces/לנפש פנימה.jpg",
-        "name": "לנפש פנימה",
-        "price": null
-      },
-      {
-        "file": "לנפש-פנימה_470.jpg",
-        "path": "images/jewelry/land/necklaces/לנפש-פנימה_470.jpg",
-        "name": "לנפש פנימה",
-        "price": 470
-      },
-      {
         "file": "מצפן.jpeg",
         "path": "images/jewelry/land/necklaces/מצפן.jpeg",
         "name": "מצפן",
-        "price": null
+        "name_en": "Compass",
+        "price": 350,
+        "size": "קוטר ס\"מ 2.3",
+        "size_en": "diameter cm 2.3"
+      },
+      {
+        "file": "לנפש פנימה.jpg",
+        "path": "images/jewelry/land/necklaces/לנפש פנימה.jpg",
+        "name": "לנפש פנימה",
+        "name_en": "Into the Soul",
+        "price": 470
       }
     ],
     "bracelets": [
@@ -92,19 +103,8 @@
         "file": "אהבת אמת.jpg",
         "path": "images/jewelry/land/bracelets/אהבת אמת.jpg",
         "name": "אהבת אמת",
-        "price": null
-      },
-      {
-        "file": "אהבת-אמת_420.jpg",
-        "path": "images/jewelry/land/bracelets/אהבת-אמת_420.jpg",
-        "name": "אהבת אמת",
-        "price": 420
-      },
-      {
-        "file": "אהבת-אמת_True-Love_420.jpg",
-        "path": "images/jewelry/land/bracelets/אהבת-אמת_True-Love_420.jpg",
-        "name": "אהבת אמת_True Love",
-        "price": 420
+        "name_en": "True Love",
+        "price": 400
       }
     ],
     "rings": [
@@ -112,12 +112,7 @@
         "file": "לנצח יחד.jpg",
         "path": "images/jewelry/land/rings/לנצח יחד.jpg",
         "name": "לנצח יחד",
-        "price": null
-      },
-      {
-        "file": "לנצח-יחד_690.jpg",
-        "path": "images/jewelry/land/rings/לנצח-יחד_690.jpg",
-        "name": "לנצח יחד",
+        "name_en": "Forever Together",
         "price": 690
       }
     ],
