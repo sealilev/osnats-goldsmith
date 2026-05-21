@@ -1,6 +1,13 @@
 {
   "kayaks": {
-    "necklaces": [],
+    "necklaces": [
+      {
+        "file": "החותר.jpeg",
+        "path": "images/jewelry/kayaks/necklaces/החותר.jpeg",
+        "name": "החותר",
+        "price": null
+      }
+    ],
     "bracelets": [],
     "rings": [],
     "custom": []
