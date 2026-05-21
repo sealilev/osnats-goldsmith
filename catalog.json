@@ -71,6 +71,12 @@
     ],
     "bracelets": [
       {
+        "file": "אהבת אמת.jpg",
+        "path": "images/jewelry/land/bracelets/אהבת אמת.jpg",
+        "name": "אהבת אמת",
+        "price": null
+      },
+      {
         "file": "אהבת-אמת_420.jpg",
         "path": "images/jewelry/land/bracelets/אהבת-אמת_420.jpg",
         "name": "אהבת אמת",
