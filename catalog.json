@@ -1,13 +1,6 @@
 {
   "kayaks": {
-    "necklaces": [
-      {
-        "file": "עפה-על-הים_370.jpg",
-        "path": "images/jewelry/kayaks/necklaces/עפה-על-הים_370.jpg",
-        "name": "עפה על הים",
-        "price": 370
-      }
-    ],
+    "necklaces": [],
     "bracelets": [],
     "rings": [],
     "custom": []
