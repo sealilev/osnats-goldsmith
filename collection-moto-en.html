@@ -79,34 +79,16 @@
       background: linear-gradient(90deg, var(--teal-mid), transparent);
     }
 
-    /* ---- Photo scroll row ---- */
+    /* ---- Photo grid (wrapping) ---- */
     .photo-grid {
-      display: flex;
-      flex-direction: row;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
       gap: 1rem;
-      overflow-x: auto;
       padding-bottom: 0.8rem;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    .photo-grid::-webkit-scrollbar {
-      height: 4px;
-    }
-
-    .photo-grid::-webkit-scrollbar-track {
-      background: rgba(255,255,255,0.05);
-      border-radius: 2px;
-    }
-
-    .photo-grid::-webkit-scrollbar-thumb {
-      background: var(--teal-mid);
-      border-radius: 2px;
     }
 
     /* Card = image + info */
     .photo-card {
-      flex: 0 0 200px;
       display: flex;
       flex-direction: column;
       border-radius: 12px;
@@ -114,7 +96,6 @@
       border: 1px solid var(--border-glow);
       background: var(--bg-card);
       backdrop-filter: blur(8px);
-      scroll-snap-align: start;
       transition: transform 0.3s, box-shadow 0.3s;
     }
 
@@ -202,7 +183,7 @@
     }
 
     @media (max-width: 640px) {
-      .photo-card { flex: 0 0 155px; }
+      .photo-grid { grid-template-columns: repeat(2, 1fr); }
       .photo-item { height: 155px; }
       .cat-nav { gap: 0.3rem; padding: 0.6rem 1rem; }
       .cat-nav a { font-size: 0.78rem; padding: 0.3rem 0.7rem; }
