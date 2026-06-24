@@ -5,7 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Osnat Levy - Goldsmith</title>
   <meta name="description" content="Osnat Levy - Goldsmith and jewelry designer. Custom jewelry and goldsmithing workshops." />
-  <link rel="stylesheet" href="style-v2.css" />
+  <link rel="stylesheet" href="css/style-v2.css" />
+  <style>
+    .osnat-quote {
+      position: relative;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      color: var(--silver-shine);
+      line-height: 1.8;
+      border-left: 3px solid var(--teal-bright);
+      padding: 0.5rem 0 0.5rem 1.5rem;
+      margin: 0 auto 1rem;
+      max-width: 520px;
+      font-style: italic;
+      text-align: left;
+    }
+    .osnat-quote p { margin: 0 0 0.5rem; }
+    .quote-highlight {
+      font-weight: 700;
+      font-style: normal;
+      font-size: 1.25rem;
+      color: var(--teal-light);
+      margin-top: 0.8rem !important;
+    }
+  </style>
 </head>
 <body class="ltr">
 
@@ -31,7 +54,7 @@
       <ul>
         <li><a href="index-en.html">Home</a></li>
         <li><a href="jewelry-en.html">Jewelry</a></li>
-        <li><a href="workshops-en.html">Workshops</a></li>
+        <li><a href="workshop-jewelry-en.html">Workshop</a></li>
       </ul>
     </nav>
 
@@ -46,7 +69,7 @@
 
       <!-- Main image -->
       <div class="hero-image-wrap">
-        <img src="images/osnat.jpg" alt="Osnat Levy - Goldsmith" class="hero-img" />
+        <img src="images/osnat.png" alt="Osnat Levy - Goldsmith" class="hero-img" />
       </div>
 
       <!-- Title -->
@@ -119,19 +142,14 @@
         </svg>
       </div>
 
-      <!-- About -->
-      <div class="about-text">
+      <!-- Quote -->
+      <blockquote class="osnat-quote">
         <p>
-          Osnat has been practicing goldsmithing for over 15 years, designing
-          jewelry pieces of her own creation as well as custom-made pieces by
-          personal request.
+          After the army, I was torn between two paths &mdash;
+          whether to continue developing as a painter or to study goldsmithing.
         </p>
-        <br>
-        <p>
-          She has been lecturing in the field for many years and currently
-          teaches workshops in small groups.
-        </p>
-      </div>
+        <p class="quote-highlight">I chose goldsmithing because I realized it was important for me to work with people.</p>
+      </blockquote>
 
     </section>
 
@@ -146,10 +164,10 @@
         <span class="cta-btn-desc">Custom jewelry design<br>and special orders</span>
       </a>
 
-      <a href="workshops-en.html" class="cta-btn" aria-label="Go to Workshops page">
+      <a href="workshop-jewelry-en.html" class="cta-btn" aria-label="Go to Workshop page">
         <span class="cta-icon">⚒️</span>
-        <span class="cta-btn-title">Workshops</span>
-        <span class="cta-btn-desc">Goldsmithing workshops<br>in small groups</span>
+        <span class="cta-btn-title">Workshop</span>
+        <span class="cta-btn-desc">Goldsmithing workshop<br>in small groups</span>
       </a>
 
     </section>
@@ -157,8 +175,8 @@
 
   <!-- Footer -->
   <footer>
-    <p class="credit">Website built by Liora Levy &mdash; Sea++</p>
-    <p class="rights">All rights reserved to Osnat Levy &copy; <span id="year"></span></p>
+    <p class="credit">Website designed & built by Liora Levi &mdash; Sea++</p>
+    <p class="rights">Website © <span id="year"></span> Liora Levi &nbsp;|&nbsp; Jewelry & content © Osnat Levy</p>
   </footer>
 
   <script>
