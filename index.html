@@ -26,6 +26,124 @@
       color: var(--teal-light);
       margin-top: 0.8rem !important;
     }
+
+    /* ---- Stories Carousel ---- */
+    .stories-section {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      padding: 0 2rem;
+    }
+    .stories-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+      color: var(--silver-shine);
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+      border: 1px solid var(--border-glow);
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+    .carousel-slide {
+      min-width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 340px;
+    }
+    .slide-img-wrap {
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--teal-deep), var(--bg-dark));
+    }
+    .slide-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .slide-text {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.8rem;
+    }
+    .slide-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--teal-light);
+    }
+    .slide-story {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+    .slide-story::-webkit-scrollbar { width: 3px; }
+    .slide-story::-webkit-scrollbar-thumb { background: var(--teal-mid); border-radius: 2px; }
+
+    /* Arrows */
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(0,0,0,0.4);
+      backdrop-filter: blur(6px);
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s;
+      z-index: 5;
+    }
+    .carousel-btn:hover { background: rgba(46,196,218,0.3); }
+    .carousel-prev { right: 12px; }
+    .carousel-next { left: 12px; }
+
+    /* Dots */
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 1rem 0;
+    }
+    .carousel-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      border: 1px solid var(--teal-bright);
+      background: transparent;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .carousel-dot.active { background: var(--teal-bright); }
+
+    @media (max-width: 640px) {
+      .carousel-slide {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+      .slide-img-wrap { height: 220px; }
+      .slide-text { padding: 1.2rem; }
+      .slide-story { max-height: 150px; }
+    }
   </style>
 </head>
 <body>
@@ -157,6 +275,52 @@
 
     </section>
 
+    <!-- קרוסלת סיפורים -->
+    <section class="stories-section" aria-label="סיפורים אישיים">
+      <h2>✦ הסיפור שמאחורי התכשיט ✦</h2>
+      <div class="carousel" id="stories-carousel">
+        <div class="carousel-track" id="carousel-track">
+
+          <!-- סיפור 1 -->
+          <div class="carousel-slide">
+            <div class="slide-img-wrap">
+              <img src="images/stories/Omer1.jpeg" alt="סיפור 1" onerror="this.style.opacity='0'" />
+            </div>
+            <div class="slide-text">
+              <span class="slide-title">הסיפור של עומר</span>
+              <p class="slide-story">פה יהיה סיפור נוגע ללב שמספר את הסיפור של התכשיט המיוחד הזה. פה יהיה סיפור נוגע ללב שמספר את הסיפור של התכשיט המיוחד הזה. פה יהיה סיפור נוגע ללב שמספר את הסיפור של התכשיט המיוחד הזה. פה יהיה סיפור נוגע ללב שמספר את הסיפור של התכשיט המיוחד הזה. פה יהיה סיפור נוגע ללב שמספר את הסיפור של התכשיט המיוחד הזה. פה יהיה סיפור נוגע ללב שמספר את הסיפור של התכשיט המיוחד הזה. פה יהיה סיפור נוגע ללב שמספר את הסיפור של התכשיט המיוחד הזה. פה יהיה סיפור נוגע ללב שמספר את הסיפור של התכשיט המיוחד הזה. פה יהיה סיפור נוגע ללב שמספר את הסיפור של התכשיט המיוחד הזה. פה יהיה סיפור נוגע ללב שמספר את הסיפור של התכשיט המיוחד הזה.</p>
+            </div>
+          </div>
+
+          <!-- סיפור 2 -->
+          <div class="carousel-slide">
+            <div class="slide-img-wrap">
+              <img src="images/stories/story2.jpeg" alt="סיפור 2" onerror="this.style.opacity='0'" />
+            </div>
+            <div class="slide-text">
+              <span class="slide-title">סיפור שני</span>
+              <p class="slide-story">פה יהיה סיפור נוגע ללב שמספר את הסיפור של התכשיט המיוחד הזה. פה יהיה סיפור נוגע ללב שמספר את הסיפור של התכשיט המיוחד הזה. פה יהיה סיפור נוגע ללב שמספר את הסיפור של התכשיט המיוחד הזה. פה יהיה סיפור נוגע ללב שמספר את הסיפור של התכשיט המיוחד הזה. פה יהיה סיפור נוגע ללב שמספר את הסיפור של התכשיט המיוחד הזה. פה יהיה סיפור נוגע ללב שמספר את הסיפור של התכשיט המיוחד הזה. פה יהיה סיפור נוגע ללב שמספר את הסיפור של התכשיט המיוחד הזה. פה יהיה סיפור נוגע ללב שמספר את הסיפור של התכשיט המיוחד הזה. פה יהיה סיפור נוגע ללב שמספר את הסיפור של התכשיט המיוחד הזה. פה יהיה סיפור נוגע ללב שמספר את הסיפור של התכשיט המיוחד הזה.</p>
+            </div>
+          </div>
+
+          <!-- סיפור 3 -->
+          <div class="carousel-slide">
+            <div class="slide-img-wrap">
+              <img src="images/stories/story3.jpeg" alt="סיפור 3" onerror="this.style.opacity='0'" />
+            </div>
+            <div class="slide-text">
+              <span class="slide-title">סיפור שלישי</span>
+              <p class="slide-story">פה יהיה סיפור נוגע ללב שמספר את הסיפור של התכשיט המיוחד הזה. פה יהיה סיפור נוגע ללב שמספר את הסיפור של התכשיט המיוחד הזה. פה יהיה סיפור נוגע ללב שמספר את הסיפור של התכשיט המיוחד הזה. פה יהיה סיפור נוגע ללב שמספר את הסיפור של התכשיט המיוחד הזה. פה יהיה סיפור נוגע ללב שמספר את הסיפור של התכשיט המיוחד הזה. פה יהיה סיפור נוגע ללב שמספר את הסיפור של התכשיט המיוחד הזה. פה יהיה סיפור נוגע ללב שמספר את הסיפור של התכשיט המיוחד הזה. פה יהיה סיפור נוגע ללב שמספר את הסיפור של התכשיט המיוחד הזה. פה יהיה סיפור נוגע ללב שמספר את הסיפור של התכשיט המיוחד הזה. פה יהיה סיפור נוגע ללב שמספר את הסיפור של התכשיט המיוחד הזה.</p>
+            </div>
+          </div>
+
+        </div>
+        <button class="carousel-btn carousel-prev" id="carousel-prev" aria-label="הסיפור הקודם">&#x203a;</button>
+        <button class="carousel-btn carousel-next" id="carousel-next" aria-label="הסיפור הבא">&#x2039;</button>
+      </div>
+      <div class="carousel-dots" id="carousel-dots"></div>
+    </section>
+
     <div class="divider"></div>
 
     <!-- כפתורי ניווט ראשיים -->
@@ -185,6 +349,34 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Stories Carousel
+    (function() {
+      const track = document.getElementById('carousel-track');
+      const slides = track.querySelectorAll('.carousel-slide');
+      const dotsWrap = document.getElementById('carousel-dots');
+      let current = 0;
+
+      slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'סיפור ' + (i + 1));
+        dot.addEventListener('click', () => goTo(i));
+        dotsWrap.appendChild(dot);
+      });
+
+      function goTo(i) {
+        current = i;
+        track.style.transform = 'translateX(' + (current * 100) + '%)';
+        dotsWrap.querySelectorAll('.carousel-dot').forEach((d, j) =>
+          d.classList.toggle('active', j === current));
+      }
+
+      document.getElementById('carousel-prev').addEventListener('click', () =>
+        goTo((current - 1 + slides.length) % slides.length));
+      document.getElementById('carousel-next').addEventListener('click', () =>
+        goTo((current + 1) % slides.length));
+    })();
   </script>
 </body>
 </html>
