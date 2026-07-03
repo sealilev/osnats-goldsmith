@@ -4,21 +4,130 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>סדנאות | אסנת לוי</title>
-  <meta name="description" content="סדנאות צורפות בקבוצות קטנות - אסנת לוי" />
-  <link rel="stylesheet" href="style-v2.css" />
+  <meta name="description" content="סדנאות צורפות וקורס צורפות - אסנת לוי" />
+  <link rel="stylesheet" href="css/style-v2.css" />
+  <style>
+    .workshops-wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto 4rem;
+      padding: 0 2rem;
+    }
+
+    .workshop-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .workshop-tile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      border-radius: 16px;
+      border: 1px solid var(--border-glow);
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      overflow: hidden;
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+      cursor: pointer;
+    }
+
+    .workshop-tile:hover {
+      transform: translateY(-5px);
+      box-shadow:
+        0 14px 36px rgba(46, 196, 218, 0.25),
+        0 0 0 1px rgba(46, 196, 218, 0.5);
+      border-color: rgba(46, 196, 218, 0.65);
+    }
+
+    /* Image area — fixed height, no dark overlay */
+    .tile-img-wrap {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(135deg, var(--teal-deep), var(--bg-dark));
+    }
+
+    .tile-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .workshop-tile:hover .tile-img {
+      transform: scale(1.05);
+    }
+
+    .tile-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      opacity: 0.25;
+    }
+
+    /* Text content below image */
+    .tile-content {
+      width: 100%;
+      padding: 1.2rem 1.2rem 1.5rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .tile-content .tile-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--silver-shine);
+      letter-spacing: 0.03em;
+    }
+
+    .tile-content .tile-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .tile-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      color: var(--teal-bright);
+      border: 1px solid rgba(46, 196, 218, 0.4);
+      border-radius: 20px;
+      padding: 0.2rem 0.7rem;
+      margin-top: 0.2rem;
+      align-self: center;
+    }
+
+    @media (max-width: 520px) {
+      .workshop-grid {
+        grid-template-columns: 1fr;
+        max-width: 320px;
+        margin: 0 auto;
+      }
+    }
+  </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link">דלג לתוכן</a>
 
-  <!-- Floating Particles -->
   <div class="particles" aria-hidden="true">
-    <div class="particle" style="left:5%;  width:3px; height:3px; --dur:15s; --delay:2s;"></div>
-    <div class="particle" style="left:25%; width:2px; height:2px; --dur:12s; --delay:4s;"></div>
-    <div class="particle" style="left:50%; width:4px; height:4px; --dur:17s; --delay:0s;"></div>
-    <div class="particle" style="left:75%; width:2px; height:2px; --dur:14s; --delay:6s;"></div>
-    <div class="particle" style="left:90%; width:3px; height:3px; --dur:11s; --delay:8s;"></div>
+    <div class="particle" style="left:10%; width:3px; height:3px; --dur:14s; --delay:0s;"></div>
+    <div class="particle" style="left:35%; width:2px; height:2px; --dur:11s; --delay:3s;"></div>
+    <div class="particle" style="left:65%; width:4px; height:4px; --dur:16s; --delay:6s;"></div>
+    <div class="particle" style="left:85%; width:2px; height:2px; --dur:13s; --delay:1s;"></div>
   </div>
 
-  <!-- Header -->
   <header>
     <div class="logo-wrap">
       <img src="images/logo.png" alt="לוגו אסנת לוי" class="logo-img" />
@@ -31,29 +140,48 @@
         <li><a href="workshops.html">סדנאות</a></li>
       </ul>
     </nav>
-
     <a href="workshops-en.html" class="lang-toggle" aria-label="Switch to English">
       🇬🇧 <span>EN</span>
     </a>
   </header>
 
-  <!-- Page Hero -->
-  <main>
+  <main id="main-content">
     <section class="page-hero">
       <h1>סדנאות</h1>
-      <p>לימוד צורפות &nbsp;✦&nbsp; קבוצות קטנות &nbsp;✦&nbsp; חוויה מיוחדת</p>
+      <p>צורפות &nbsp;✦&nbsp; יצירה &nbsp;✦&nbsp; קבוצות קטנות</p>
     </section>
 
     <div class="divider"></div>
 
-    <!-- Coming Soon -->
-    <div class="coming-soon">
-      <span class="cs-icon">⚒️</span>
-      <h2>הסדנאות בדרך אליך</h2>
-      <p>
-        בקרוב תוכלי למצוא כאן את כל המידע על הסדנאות —<br>
-        מועדים, תכנים, ואיך להירשם.
-      </p>
+    <div class="workshops-wrap">
+      <div class="workshop-grid">
+
+        <!-- סדנת יצירת תכשיט -->
+        <a href="workshop-jewelry.html" class="workshop-tile" aria-label="סדנת יצירת תכשיט">
+          <div class="tile-img-wrap">
+            <div class="tile-placeholder">💍</div>
+            <img src="images/workshops/workshop-jewelry.jpg" alt="סדנת יצירת תכשיט" class="tile-img" onerror="this.style.display='none'" />
+          </div>
+          <div class="tile-content">
+            <span class="tile-title">סדנת יצירת תכשיט</span>
+            <span class="tile-desc">חוויה ייחודית של יצירה<br>בקבוצה קטנה ואינטימית</span>
+          </div>
+        </a>
+
+        <!-- קורס צורפות -->
+        <a href="workshop-course-soon.html" class="workshop-tile" aria-label="קורס צורפות - בקרוב">
+          <div class="tile-img-wrap">
+            <div class="tile-placeholder">⚒️</div>
+            <img src="images/workshops/workshop-course.jpg" alt="קורס צורפות" class="tile-img" onerror="this.style.display='none'" />
+          </div>
+          <div class="tile-content">
+            <span class="tile-title">קורס צורפות</span>
+            <span class="tile-desc">לימוד מעמיק של אומנות<br>הצורפות מהיסוד</span>
+            <span class="tile-badge">בקרוב</span>
+          </div>
+        </a>
+
+      </div>
     </div>
 
     <a href="index.html" class="back-link" aria-label="חזרה לדף הראשי">
@@ -61,14 +189,12 @@
     </a>
   </main>
 
-  <!-- Footer -->
   <footer>
-    <p class="credit">האתר נבנה ע"י ליאורה לוי &mdash; Sea++</p>
-    <p class="rights">כל הזכויות שמורות לאסנת לוי &copy; <span id="year"></span></p>
+    <p class="credit">האתר עוצב ונבנה ע"י ליאורה לוי &mdash; <span dir="ltr">Sea++</span></p>
+    <p class="rights">זכויות האתר © <span id="year"></span> ליאורה Levi &nbsp;|&nbsp; זכויות התכשיטים והתכנים © אסנת Levy</p>
+    <p class="accessibility-link"><a href="accessibility.html">הצהרת נגישות</a></p>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

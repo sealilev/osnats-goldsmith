@@ -4,21 +4,128 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Workshops | Osnat Levy</title>
-  <meta name="description" content="Goldsmithing workshops in small groups - Osnat Levy" />
-  <link rel="stylesheet" href="style-v2.css" />
+  <meta name="description" content="Goldsmithing workshops and course - Osnat Levy" />
+  <link rel="stylesheet" href="css/style-v2.css" />
+  <style>
+    .workshops-wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto 4rem;
+      padding: 0 2rem;
+    }
+
+    .workshop-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .workshop-tile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      border-radius: 16px;
+      border: 1px solid var(--border-glow);
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      overflow: hidden;
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+      cursor: pointer;
+    }
+
+    .workshop-tile:hover {
+      transform: translateY(-5px);
+      box-shadow:
+        0 14px 36px rgba(46, 196, 218, 0.25),
+        0 0 0 1px rgba(46, 196, 218, 0.5);
+      border-color: rgba(46, 196, 218, 0.65);
+    }
+
+    .tile-img-wrap {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(135deg, var(--teal-deep), var(--bg-dark));
+    }
+
+    .tile-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .workshop-tile:hover .tile-img {
+      transform: scale(1.05);
+    }
+
+    .tile-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      opacity: 0.25;
+    }
+
+    .tile-content {
+      width: 100%;
+      padding: 1.2rem 1.2rem 1.5rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .tile-content .tile-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--silver-shine);
+      letter-spacing: 0.03em;
+    }
+
+    .tile-content .tile-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .tile-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      color: var(--teal-bright);
+      border: 1px solid rgba(46, 196, 218, 0.4);
+      border-radius: 20px;
+      padding: 0.2rem 0.7rem;
+      margin-top: 0.2rem;
+      align-self: center;
+    }
+
+    @media (max-width: 520px) {
+      .workshop-grid {
+        grid-template-columns: 1fr;
+        max-width: 320px;
+        margin: 0 auto;
+      }
+    }
+  </style>
 </head>
 <body class="ltr">
+<a href="#main-content" class="skip-link">Skip to content</a>
 
-  <!-- Floating Particles -->
   <div class="particles" aria-hidden="true">
-    <div class="particle" style="left:5%;  width:3px; height:3px; --dur:15s; --delay:2s;"></div>
-    <div class="particle" style="left:25%; width:2px; height:2px; --dur:12s; --delay:4s;"></div>
-    <div class="particle" style="left:50%; width:4px; height:4px; --dur:17s; --delay:0s;"></div>
-    <div class="particle" style="left:75%; width:2px; height:2px; --dur:14s; --delay:6s;"></div>
-    <div class="particle" style="left:90%; width:3px; height:3px; --dur:11s; --delay:8s;"></div>
+    <div class="particle" style="left:10%; width:3px; height:3px; --dur:14s; --delay:0s;"></div>
+    <div class="particle" style="left:35%; width:2px; height:2px; --dur:11s; --delay:3s;"></div>
+    <div class="particle" style="left:65%; width:4px; height:4px; --dur:16s; --delay:6s;"></div>
+    <div class="particle" style="left:85%; width:2px; height:2px; --dur:13s; --delay:1s;"></div>
   </div>
 
-  <!-- Header -->
   <header>
     <div class="logo-wrap">
       <img src="images/logo.png" alt="Osnat Levy Logo" class="logo-img" />
@@ -31,29 +138,48 @@
         <li><a href="workshops-en.html">Workshops</a></li>
       </ul>
     </nav>
-
     <a href="workshops.html" class="lang-toggle" aria-label="עבור לעברית">
       🇮🇱 <span>עב</span>
     </a>
   </header>
 
-  <!-- Page Hero -->
-  <main>
+  <main id="main-content">
     <section class="page-hero">
       <h1>Workshops</h1>
-      <p>Goldsmithing &nbsp;✦&nbsp; Small groups &nbsp;✦&nbsp; Unique experience</p>
+      <p>Goldsmithing &nbsp;✦&nbsp; Creation &nbsp;✦&nbsp; Small groups</p>
     </section>
 
     <div class="divider"></div>
 
-    <!-- Coming Soon -->
-    <div class="coming-soon">
-      <span class="cs-icon">⚒️</span>
-      <h2>Workshops Coming Soon</h2>
-      <p>
-        Soon you'll find all the information about our workshops here —<br>
-        dates, content, and how to sign up.
-      </p>
+    <div class="workshops-wrap">
+      <div class="workshop-grid">
+
+        <!-- Jewelry Making Workshop -->
+        <a href="workshop-jewelry-en.html" class="workshop-tile" aria-label="Jewelry Making Workshop">
+          <div class="tile-img-wrap">
+            <div class="tile-placeholder">💍</div>
+            <img src="images/workshops/workshop-jewelry.jpg" alt="Jewelry Making Workshop" class="tile-img" onerror="this.style.display='none'" />
+          </div>
+          <div class="tile-content">
+            <span class="tile-title">Jewelry Workshop</span>
+            <span class="tile-desc">A unique creative experience<br>in a small, intimate group</span>
+          </div>
+        </a>
+
+        <!-- Goldsmithing Course -->
+        <a href="workshop-course-soon-en.html" class="workshop-tile" aria-label="Goldsmithing Course - Coming Soon">
+          <div class="tile-img-wrap">
+            <div class="tile-placeholder">⚒️</div>
+            <img src="images/workshops/workshop-course.jpg" alt="Goldsmithing Course" class="tile-img" onerror="this.style.display='none'" />
+          </div>
+          <div class="tile-content">
+            <span class="tile-title">Goldsmithing Course</span>
+            <span class="tile-desc">An in-depth journey into<br>the art of goldsmithing</span>
+            <span class="tile-badge">Coming Soon</span>
+          </div>
+        </a>
+
+      </div>
     </div>
 
     <a href="index-en.html" class="back-link" aria-label="Back to home page">
@@ -61,14 +187,12 @@
     </a>
   </main>
 
-  <!-- Footer -->
   <footer>
-    <p class="credit">Website built by Liora Levy &mdash; Sea++</p>
-    <p class="rights">All rights reserved to Osnat Levy &copy; <span id="year"></span></p>
+    <p class="credit">Website designed &amp; built by Liora Levi &mdash; <span dir="ltr">Sea++</span></p>
+    <p class="rights">Website © <span id="year"></span> Liora Levi &nbsp;|&nbsp; Jewelry &amp; content © Osnat Levy</p>
+    <p class="accessibility-link"><a href="accessibility-en.html">Accessibility Statement</a></p>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
