@@ -2,6 +2,25 @@
    אסנת לוי - צורפת | Style V2 – Sage Green
    =============================== */
 
+/* ---- Skip to content (accessibility) ---- */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  right: 0;
+  background: var(--teal-deep, #4a7c59);
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  z-index: 9999;
+  border-radius: 0 0 8px 8px;
+  text-decoration: none;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 0;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Heebo:wght@300;400;500&display=swap');
 
 :root {
@@ -537,6 +556,15 @@ footer p {
 footer .credit {
   color: var(--teal-bright);
   font-weight: 500;
+}
+
+footer .accessibility-link a {
+  color: var(--text-muted);
+  text-decoration: underline;
+  font-size: 0.78rem;
+}
+footer .accessibility-link a:hover {
+  color: var(--teal-bright);
 }
 
 footer .rights {

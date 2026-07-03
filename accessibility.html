@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>הצהרת נגישות | אסנת לוי</title>
+  <link rel="stylesheet" href="css/style-v2.css" />
+</head>
+<body>
+<a href="#main-content" class="skip-link">דלג לתוכן</a>
+
+  <header>
+    <div class="logo-wrap">
+      <img src="images/logo.png" alt="לוגו אסנת לוי" class="logo-img" />
+      <span class="site-title">אסנת לוי</span>
+    </div>
+    <nav aria-label="ניווט ראשי">
+      <ul>
+        <li><a href="index.html">ראשי</a></li>
+        <li><a href="jewelry.html">צורפות</a></li>
+        <li><a href="workshop-jewelry.html">סדנה</a></li>
+      </ul>
+    </nav>
+    <a href="accessibility-en.html" class="lang-toggle" aria-label="Switch to English">
+      🇬🇧 <span>EN</span>
+    </a>
+  </header>
+
+  <main id="main-content">
+    <section class="page-hero">
+      <h1>הצהרת נגישות</h1>
+    </section>
+
+    <div class="divider"></div>
+
+    <div style="max-width:700px; margin:0 auto 4rem; padding:0 2rem; line-height:1.9; color:var(--text-light);">
+
+      <p>
+        אסנת לוי מאמינה שכל אדם זכאי לגישה שוויונית למידע ולשירותים באינטרנט.
+        אנו פועלים לייצר אתר נגיש ככל האפשר, בהתאם לדרישות תקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), התשע"ג–2013, ובהתאם לתקן הישראלי ת"י 5568 (WCAG 2.1 רמה AA).
+      </p>
+
+      <h2 style="font-family:'Playfair Display',serif; color:var(--teal-light); margin:2rem 0 0.8rem;">מה כלול בנגישות האתר</h2>
+      <ul style="padding-right:1.5rem;">
+        <li>תיאורי טקסט חלופי לתמונות (תגית alt)</li>
+        <li>ניווט מלא באמצעות מקלדת</li>
+        <li>כפתור "דלג לתוכן" בכל עמוד</li>
+        <li>כותרות ומבנה היררכי תקין לניווט עם קורא מסך</li>
+        <li>ניגודיות צבעים עומדת בדרישות AA</li>
+        <li>האתר תומך בתצוגה RTL (עברית) ו-LTR (אנגלית)</li>
+      </ul>
+
+      <h2 style="font-family:'Playfair Display',serif; color:var(--teal-light); margin:2rem 0 0.8rem;">יצירת קשר בנושא נגישות</h2>
+      <p>
+        נתקלת בבעיית נגישות? נשמח לשמוע ולתקן.
+        <br>
+        ניתן לפנות בווצאפ:
+        <a href="https://wa.me/972523744408" style="color:var(--teal-bright);">052-374-4408</a>
+      </p>
+
+      <h2 style="font-family:'Playfair Display',serif; color:var(--teal-light); margin:2rem 0 0.8rem;">תאריך עדכון אחרון</h2>
+      <p id="access-date"></p>
+
+    </div>
+
+    <a href="index.html" class="back-link">&#x2190; חזרה לדף הראשי</a>
+  </main>
+
+  <footer>
+    <p class="credit">האתר עוצב ונבנה ע"י ליאורה לוי &mdash; <span dir="ltr">Sea++</span></p>
+    <p class="rights">זכויות האתר © <span id="year"></span> ליאורה לוי &nbsp;|&nbsp; זכויות התכשיטים והתכנים © אסנת לוי</p>
+    <p class="accessibility-link"><a href="accessibility.html">הצהרת נגישות</a></p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('access-date').textContent = 'יולי 2026';
+  </script>
+</body>
+</html>

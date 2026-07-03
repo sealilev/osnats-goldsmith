@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accessibility Statement | Osnat Levy</title>
+  <link rel="stylesheet" href="css/style-v2.css" />
+</head>
+<body class="ltr">
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+  <header>
+    <div class="logo-wrap">
+      <img src="images/logo.png" alt="Osnat Levy Logo" class="logo-img" />
+      <span class="site-title">Osnat Levy</span>
+    </div>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index-en.html">Home</a></li>
+        <li><a href="jewelry-en.html">Jewelry</a></li>
+        <li><a href="workshop-jewelry-en.html">Workshop</a></li>
+      </ul>
+    </nav>
+    <a href="accessibility.html" class="lang-toggle" aria-label="עבור לעברית">
+      🇮🇱 <span>עב</span>
+    </a>
+  </header>
+
+  <main id="main-content">
+    <section class="page-hero">
+      <h1>Accessibility Statement</h1>
+    </section>
+
+    <div class="divider"></div>
+
+    <div style="max-width:700px; margin:0 auto 4rem; padding:0 2rem; line-height:1.9; color:var(--text-light);">
+
+      <p>
+        Osnat Levy believes every person deserves equal access to information and services online.
+        This website strives to meet the requirements of Israeli Standard 5568 (WCAG 2.1, Level AA)
+        and the Israeli Equal Rights for Persons with Disabilities Regulations (2013).
+      </p>
+
+      <h2 style="font-family:'Playfair Display',serif; color:var(--teal-light); margin:2rem 0 0.8rem;">Accessibility Features</h2>
+      <ul style="padding-left:1.5rem;">
+        <li>Alternative text descriptions for all images</li>
+        <li>Full keyboard navigation support</li>
+        <li>Skip-to-content link on every page</li>
+        <li>Proper heading hierarchy for screen readers</li>
+        <li>Color contrast meeting AA requirements</li>
+        <li>Support for both RTL (Hebrew) and LTR (English) layouts</li>
+      </ul>
+
+      <h2 style="font-family:'Playfair Display',serif; color:var(--teal-light); margin:2rem 0 0.8rem;">Contact Us</h2>
+      <p>
+        Encountered an accessibility issue? We'd love to hear from you and fix it.
+        <br>
+        WhatsApp:
+        <a href="https://wa.me/972523744408" style="color:var(--teal-bright);">+972-52-374-4408</a>
+      </p>
+
+      <h2 style="font-family:'Playfair Display',serif; color:var(--teal-light); margin:2rem 0 0.8rem;">Last Updated</h2>
+      <p>July 2026</p>
+
+    </div>
+
+    <a href="index-en.html" class="back-link">&#x2192; Back to Home</a>
+  </main>
+
+  <footer>
+    <p class="credit">Website designed &amp; built by Liora Levi &mdash; <span dir="ltr">Sea++</span></p>
+    <p class="rights">Website © <span id="year"></span> Liora Levi &nbsp;|&nbsp; Jewelry &amp; content © Osnat Levy</p>
+    <p class="accessibility-link"><a href="accessibility-en.html">Accessibility Statement</a></p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
