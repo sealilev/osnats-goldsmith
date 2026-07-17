@@ -31,9 +31,9 @@
     .stories-section {
       position: relative;
       z-index: 1;
-      max-width: 1200px;
+      max-width: 1400px;
       margin: 0 auto 2rem;
-      padding: 0 2rem;
+      padding: 0 1.5rem;
     }
     .stories-section h2 {
       font-family: 'Playfair Display', serif;
@@ -57,12 +57,13 @@
     .carousel-slide {
       min-width: 100%;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 2fr 3fr;
+      height: 440px;
     }
     .slide-img-wrap {
       overflow: hidden;
       background: linear-gradient(135deg, var(--teal-deep), var(--bg-dark));
-      min-height: 340px;
+      height: 100%;
     }
     .slide-img-wrap img {
       width: 100%;
@@ -84,9 +85,10 @@
       color: var(--teal-light);
     }
     .slide-story {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       color: var(--text-muted);
-      line-height: 1.8;
+      line-height: 1.7;
+      overflow: hidden;
     }
 
     /* Arrows */
