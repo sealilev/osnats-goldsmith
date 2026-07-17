@@ -291,7 +291,7 @@ nav a:hover::after {
   letter-spacing: 0.15em;
   text-transform: uppercase;
   margin-bottom: 1rem;
-  font-weight: 300;
+  font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: center;
