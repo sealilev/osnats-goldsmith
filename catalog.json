@@ -1,127 +1,59 @@
 {
   "kayaks": {
     "necklaces": [
-      {
-        "file": "הספיסטית.jpeg",
-        "path": "images/jewelry/kayaks/necklaces/הספיסטית.jpeg",
-        "name": "הספיסטית",
-        "name_en": "The Spontaneous One",
-        "price": 300,
-        "size": "אורך, רוחב 2.7, 2.6",
-        "size_en": "length x width 2.7, 2.6"
-      },
-      {
-        "file": "הגולש בקיאק.jpeg",
-        "path": "images/jewelry/kayaks/necklaces/הגולש בקיאק.jpeg",
-        "name": "הגולש בקיאק",
-        "name_en": "The Kayak Surfer",
-        "price": 300,
-        "size": "קוטר ס\"מ 3",
-        "size_en": "diameter cm 3"
-      },
-      {
-        "file": "החותר.jpeg",
-        "path": "images/jewelry/kayaks/necklaces/החותר.jpeg",
-        "name": "החותר",
-        "name_en": "The Paddler",
-        "price": 300,
-        "size": "קוטר ס\"מ 3",
-        "size_en": "diameter cm 3"
-      },
-      {
-        "file": "החותרת למרחקים.jpeg",
-        "path": "images/jewelry/kayaks/necklaces/החותרת למרחקים.jpeg",
-        "name": "החותרת למרחקים",
-        "name_en": "Paddling into the Distance",
-        "price": 280,
-        "size": "קוטר ס\"מ 2.8",
-        "size_en": "diameter cm 2.8"
-      },
-      {
-        "file": "חותרת הסרפסקי.jpeg",
-        "path": "images/jewelry/kayaks/necklaces/חותרת הסרפסקי.jpeg",
-        "name": "חותרת הסרפסקי",
-        "name_en": "The Surfski Paddler",
-        "price": 300,
-        "size": "קוטר ס\"מ 3",
-        "size_en": "diameter cm 3"
-      },
-      {
-        "file": "החותרת רחוק.jpeg",
-        "path": "images/jewelry/kayaks/necklaces/החותרת רחוק.jpeg",
-        "name": "החותרת רחוק",
-        "name_en": "Paddling Far",
-        "price": 300
-      },
-      {
-        "file": "חתירה אל השקט.jpg",
-        "path": "images/jewelry/kayaks/necklaces/חתירה אל השקט.jpg",
-        "name": "חתירה אל השקט",
-        "name_en": "Rowing into Stillness",
-        "price": 350
-      },
-      {
-        "file": "חותר אל היעד.jpg",
-        "path": "images/jewelry/kayaks/necklaces/חותר אל היעד.jpg",
-        "name": "חותר אל היעד",
-        "name_en": "Rowing Toward the Goal",
-        "price": 360
-      },
-      {
-        "file": "חדורת מטרה.jpg",
-        "path": "images/jewelry/kayaks/necklaces/חדורת מטרה.jpg",
-        "name": "חדורת מטרה",
-        "name_en": "Driven with Purpose",
-        "price": 400
-      }
+      {"path": "images/jewelry/kayaks/necklaces/הספיסטית.jpeg", "name": "הספיסטית", "name_en": "The Spontaneous One", "price": 300, "size": "2.7×2.6 ס\"מ"},
+      {"path": "images/jewelry/kayaks/necklaces/הגולש בקיאק.jpeg", "name": "הגולש בקיאק", "name_en": "The Kayak Surfer", "price": 300, "size": "קוטר 3 ס\"מ"},
+      {"path": "images/jewelry/kayaks/necklaces/החותר.jpeg", "name": "החותר", "name_en": "The Paddler", "price": 300, "size": "קוטר 3 ס\"מ"},
+      {"path": "images/jewelry/kayaks/necklaces/החותרת למרחקים.jpeg", "name": "החותרת למרחקים", "name_en": "Paddling into the Distance", "price": 280, "size": "קוטר 2.8 ס\"מ"},
+      {"path": "images/jewelry/kayaks/necklaces/חותרת הסרפסקי.jpeg", "name": "חותרת הסרפסקי", "name_en": "The Surfski Paddler", "price": 300, "size": "קוטר 3 ס\"מ"},
+      {"path": "images/jewelry/kayaks/necklaces/החותרת רחוק.jpeg", "name": "החותרת רחוק", "name_en": "Paddling Far", "price": 300},
+      {"path": "images/jewelry/kayaks/necklaces/חתירה אל השקט.jpg", "name": "חתירה אל השקט", "name_en": "Rowing into Stillness", "price": 350},
+      {"path": "images/jewelry/kayaks/necklaces/חותר אל היעד.jpg", "name": "חותר אל היעד", "name_en": "Rowing Toward the Goal", "price": 360},
+      {"path": "images/jewelry/kayaks/necklaces/חדורת מטרה.jpg", "name": "חדורת מטרה", "name_en": "Driven with Purpose", "price": 400},
+      {"path": "images/jewelry/kayaks/necklaces/עף על הים.jpg", "name": "עף על הים", "name_en": "Flying Over the Sea", "price": 340},
+      {"path": "images/jewelry/kayaks/necklaces/השחף.jpg", "name": "השחף", "name_en": "The Seagull", "price": 360},
+      {"path": "images/jewelry/kayaks/necklaces/משוט חיי.jpg", "name": "משוט חיי", "name_en": "Paddle of My Life", "price": 340}
     ],
-    "bracelets": [],
-    "rings": [],
-    "custom": []
+    "pins": [
+      {"path": "images/jewelry/kayaks/pins/משוט.jpg", "name": "משוט", "name_en": "Paddle", "price": 320},
+      {"path": "images/jewelry/kayaks/pins/משוטי הכסף.jpg", "name": "משוטי הכסף", "name_en": "Silver Paddles", "price": 320},
+      {"path": "images/jewelry/kayaks/pins/חותר למרחק.jpg", "name": "חותר למרחק", "name_en": "Rowing Into the Distance", "price": 320}
+    ],
+    "rings": [
+      {"path": "images/jewelry/kayaks/rings/לנצח יחד.jpg", "name": "לנצח יחד", "name_en": "Forever Together", "price": 690}
+    ]
   },
   "land": {
     "necklaces": [
-      {
-        "file": "מצפן.jpeg",
-        "path": "images/jewelry/land/necklaces/מצפן.jpeg",
-        "name": "מצפן",
-        "name_en": "Compass",
-        "price": 350,
-        "size": "קוטר ס\"מ 2.3",
-        "size_en": "diameter cm 2.3"
-      },
-      {
-        "file": "לנפש פנימה.jpg",
-        "path": "images/jewelry/land/necklaces/לנפש פנימה.jpg",
-        "name": "לנפש פנימה",
-        "name_en": "Into the Soul",
-        "price": 470
-      }
+      {"path": "images/jewelry/land/necklaces/מצפן.jpeg", "name": "מצפן", "name_en": "Compass", "price": 350, "size": "קוטר 2.3 ס\"מ"},
+      {"path": "images/jewelry/land/necklaces/לנפש פנימה.jpg", "name": "לנפש פנימה", "name_en": "Into the Soul", "price": 470},
+      {"path": "images/jewelry/land/necklaces/מעומק ליבי.jpg", "name": "מעומק ליבי", "name_en": "From the Depths of My Heart", "price": 360},
+      {"path": "images/jewelry/land/necklaces/בואי נרקוד.jpg", "name": "בואי נרקוד", "name_en": "Let's Dance", "price": 360},
+      {"path": "images/jewelry/land/necklaces/חדר הלב.jpg", "name": "חדר הלב", "name_en": "Heart Chamber", "price": 320},
+      {"path": "images/jewelry/land/necklaces/ריבועי הלב.jpg", "name": "ריבועי הלב", "name_en": "Heart Squares", "price": 320},
+      {"path": "images/jewelry/land/necklaces/נשימת הלב.jpg", "name": "נשימת הלב", "name_en": "Heart Breath", "price": 320},
+      {"path": "images/jewelry/land/necklaces/מזחלות.jpg", "name": "מזחלות", "name_en": "Sleds", "price": 320},
+      {"path": "images/jewelry/land/necklaces/לצתא מהקופסא.jpg", "name": "לצתא מהקופסא", "name_en": "Think Outside the Box", "price": 320}
     ],
     "bracelets": [
-      {
-        "file": "אהבת אמת.jpg",
-        "path": "images/jewelry/land/bracelets/אהבת אמת.jpg",
-        "name": "אהבת אמת",
-        "name_en": "True Love",
-        "price": 400
-      }
+      {"path": "images/jewelry/land/bracelets/אהבת אמת.jpg", "name": "אהבת אמת", "name_en": "True Love", "price": 400},
+      {"path": "images/jewelry/land/bracelets/צמיד הזהב.jpg", "name": "צמיד הזהב", "name_en": "Gold Bracelet", "price": 330},
+      {"path": "images/jewelry/land/bracelets/מלוא הרימון.jpg", "name": "מלוא הרימון", "name_en": "Full Pomegranate", "price": 330},
+      {"path": "images/jewelry/land/bracelets/חללית הרימון.jpg", "name": "חללית הרימון", "name_en": "Pomegranate Spaceship", "price": 330},
+      {"path": "images/jewelry/land/bracelets/סלסולים.jpg", "name": "סלסולים", "name_en": "Curls", "price": 330},
+      {"path": "images/jewelry/land/bracelets/פירות הרימון.jpg", "name": "פירות הרימון", "name_en": "Pomegranate Fruits", "price": 330},
+      {"path": "images/jewelry/land/bracelets/עלי שלכת.jpg", "name": "עלי שלכת", "name_en": "Autumn Leaves", "price": 330}
     ],
     "rings": [
-      {
-        "file": "לנצח יחד.jpg",
-        "path": "images/jewelry/land/rings/לנצח יחד.jpg",
-        "name": "לנצח יחד",
-        "name_en": "Forever Together",
-        "price": 690
-      }
+      {"path": "images/jewelry/land/rings/באהבה.jpg", "name": "באהבה", "name_en": "With Love", "price": 330},
+      {"path": "images/jewelry/land/rings/טבעת הפרי.jpg", "name": "טבעת הפרי", "name_en": "Fruit Ring", "price": 330},
+      {"path": "images/jewelry/land/rings/משפחה.jpg", "name": "משפחה", "name_en": "Family", "price": 330}
     ],
-    "custom": []
+    "pins": [
+      {"path": "images/jewelry/land/pins/נדן החרב.jpg", "name": "נדן החרב", "name_en": "Sword Sheath", "price": 330},
+      {"path": "images/jewelry/land/pins/מראה.jpg", "name": "מראה", "name_en": "Mirror", "price": 330},
+      {"path": "images/jewelry/land/pins/שנהב.jpg", "name": "שנהב", "name_en": "Ivory", "price": 330}
+    ]
   },
-  "moto": {
-    "necklaces": [],
-    "bracelets": [],
-    "rings": [],
-    "custom": []
-  }
+  "moto": {}
 }
