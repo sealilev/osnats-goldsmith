@@ -7,6 +7,98 @@
   <title>Osnat Levy - Goldsmith</title>
   <meta name="description" content="Osnat Levy - Goldsmith and jewelry designer. Custom jewelry and goldsmithing workshops." />
   <link rel="stylesheet" href="css/style-v2.css" />
+  <style>
+    .about-btn {
+      display: inline-block;
+      margin-top: 1rem;
+      background: none;
+      border: 1px solid var(--teal-bright);
+      color: var(--teal-bright);
+      padding: 0.45rem 1.3rem;
+      border-radius: 20px;
+      font-family: 'Heebo', sans-serif;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.25s, color 0.25s;
+      letter-spacing: 0.04em;
+    }
+    .about-btn:hover { background: var(--teal-bright); color: var(--bg-dark); }
+
+    .about-modal-wrap {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .about-modal-wrap[hidden] { display: none; }
+    .about-modal-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.82);
+      backdrop-filter: blur(5px);
+    }
+    .about-modal-box {
+      position: relative;
+      background: var(--bg-card);
+      border: 1px solid var(--border-glow);
+      border-radius: 16px;
+      max-width: 680px;
+      width: 92%;
+      max-height: 88vh;
+      overflow-y: auto;
+      padding: 2.5rem 2rem 2rem;
+      z-index: 1;
+      text-align: left;
+    }
+    .about-modal-close {
+      position: absolute;
+      top: 0.9rem;
+      right: 0.9rem;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.7rem;
+      cursor: pointer;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: background 0.2s;
+    }
+    .about-modal-close:hover { background: rgba(255,255,255,0.12); }
+    .about-modal-photos {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .about-modal-photos img {
+      width: 50%;
+      border-radius: 10px;
+      object-fit: cover;
+      max-height: 260px;
+    }
+    .about-modal-name {
+      font-family: 'Heebo', sans-serif;
+      color: var(--teal-light);
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.9rem;
+    }
+    .about-modal-body p {
+      color: var(--text-muted);
+      line-height: 1.85;
+      margin-bottom: 0.55rem;
+      font-size: 1rem;
+    }
+    @media (max-width: 500px) {
+      .about-modal-photos { flex-direction: column; }
+      .about-modal-photos img { width: 100%; }
+    }
+  </style>
 </head>
 <body class="ltr">
 <a href="#main-content" class="skip-link">Skip to content</a>
@@ -124,15 +216,14 @@
       <!-- About -->
       <div class="about-text">
         <p>
-          Osnat has been practicing goldsmithing for over 15 years, designing
-          jewelry pieces of her own creation as well as custom-made pieces by
-          personal request.
+          I grew up in a kibbutz near the Sea of Galilee. From childhood I loved
+          making things with my hands — drawing, crafting, creating.
+          When it was time to choose a profession, I wanted something that also
+          brings me close to people. That's how I found my way to goldsmithing.
         </p>
-        <br>
-        <p>
-          She has been lecturing in the field for many years and currently
-          teaches workshops in small groups.
-        </p>
+      </div>
+      <div style="text-align:center;margin-top:0.8rem;">
+        <button class="about-btn" id="about-open" aria-haspopup="dialog" aria-expanded="false">More about me&hellip;</button>
       </div>
 
     </section>
@@ -157,15 +248,61 @@
     </section>
   </main>
 
+  <!-- About Modal -->
+  <div class="about-modal-wrap" id="about-modal" hidden role="dialog" aria-modal="true" aria-labelledby="about-modal-name">
+    <div class="about-modal-overlay" id="about-overlay"></div>
+    <div class="about-modal-box">
+      <button class="about-modal-close" id="about-close" aria-label="Close">&times;</button>
+      <div class="about-modal-photos">
+        <img src="images/osnat.png" alt="Osnat Levy" />
+        <img src="images/osnat2.png" alt="Osnat Levy" onerror="this.parentElement.removeChild(this)" />
+      </div>
+      <p class="about-modal-name" id="about-modal-name">Osnat Levy</p>
+      <div class="about-modal-body">
+        <p>I grew up in a kibbutz near the Sea of Galilee. In my childhood and youth I experimented with various crafts, and especially painting.</p>
+        <p>When the time came to choose a profession, I wanted something that also meets people — that's how I came to goldsmithing.</p>
+        <p>I am a graduate of Wizo Canada-Haifa, and I have also attended many courses in the field.</p>
+        <p>I create based on my hobbies, crafting in ancient techniques, and according to my customers' wishes.</p>
+        <p>I warmly invite you to reach out — I'll create a piece of jewelry to your request, or you're welcome to choose from my collection.</p>
+      </div>
+    </div>
+  </div>
+
   <!-- Footer -->
   <footer>
-    <p class="credit">Website designed & built by Liora Levi &mdash; Sea++</p>
+    <p class="credit"><a href="https://sealilev.github.io/liora/index.html" style="color:inherit;text-decoration:none;">Website designed &amp; built by Liora Levi &mdash; Sea++</a></p>
     <p class="rights">Website © <span id="year"></span> Liora Levi &nbsp;|&nbsp; Jewelry & content © Osnat Levy</p>
     <p class="accessibility-link"><a href="accessibility-en.html">Accessibility Statement</a></p>
   </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // About modal
+    (function() {
+      var modal = document.getElementById('about-modal');
+      var overlay = document.getElementById('about-overlay');
+      var closeBtn = document.getElementById('about-close');
+      var openBtn = document.getElementById('about-open');
+      function openModal() {
+        modal.removeAttribute('hidden');
+        document.body.style.overflow = 'hidden';
+        openBtn.setAttribute('aria-expanded', 'true');
+        closeBtn.focus();
+      }
+      function closeModal() {
+        modal.setAttribute('hidden', '');
+        document.body.style.overflow = '';
+        openBtn.setAttribute('aria-expanded', 'false');
+        openBtn.focus();
+      }
+      openBtn.addEventListener('click', openModal);
+      closeBtn.addEventListener('click', closeModal);
+      overlay.addEventListener('click', closeModal);
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && !modal.hasAttribute('hidden')) closeModal();
+      });
+    })();
   </script>
   <script src="js/accessibility-widget.js"></script>
 </body>
