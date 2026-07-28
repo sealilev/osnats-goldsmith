@@ -158,39 +158,70 @@
   `;
   document.head.appendChild(style);
 
+  /* ---- Language detection ---- */
+  const isEn = document.documentElement.lang === 'en';
+  const t = isEn ? {
+    open:      'Open accessibility menu',
+    panel:     'Accessibility menu',
+    title:     'Accessibility',
+    close:     'Close accessibility menu',
+    contrast:  'High contrast',
+    fontSize:  'Font size',
+    larger:    'Increase font size',
+    normal:    'Normal',
+    smaller:   'Decrease font size',
+    links:     'Highlight links',
+    reset:     '↺ Reset',
+    dir:       'ltr',
+  } : {
+    open:      'פתח תפריט נגישות',
+    panel:     'תפריט נגישות',
+    title:     'נגישות',
+    close:     'סגור תפריט נגישות',
+    contrast:  'ניגודיות גבוהה',
+    fontSize:  'גודל גופן',
+    larger:    'הגדל גופן',
+    normal:    'רגיל',
+    smaller:   'הקטן גופן',
+    links:     'הדגשת קישורים',
+    reset:     '↺ איפוס',
+    dir:       'rtl',
+  };
+
   /* ---- Build widget HTML ---- */
   const btn = document.createElement('button');
   btn.id = 'a11y-btn';
-  btn.setAttribute('aria-label', 'פתח תפריט נגישות');
+  btn.setAttribute('aria-label', t.open);
   btn.setAttribute('aria-expanded', 'false');
   btn.innerHTML = '♿';
 
   const panel = document.createElement('div');
   panel.id = 'a11y-panel';
   panel.setAttribute('role', 'dialog');
-  panel.setAttribute('aria-label', 'תפריט נגישות');
+  panel.setAttribute('aria-label', t.panel);
+  panel.style.direction = t.dir;
   panel.innerHTML = `
     <div id="a11y-panel-header">
-      <h3>נגישות</h3>
-      <button id="a11y-close" aria-label="סגור תפריט נגישות">✕</button>
+      <h3>${t.title}</h3>
+      <button id="a11y-close" aria-label="${t.close}">✕</button>
     </div>
     <div class="a11y-row">
-      <span class="a11y-label">ניגודיות גבוהה</span>
-      <button class="a11y-toggle" id="toggle-contrast" aria-pressed="false" aria-label="ניגודיות גבוהה"></button>
+      <span class="a11y-label">${t.contrast}</span>
+      <button class="a11y-toggle" id="toggle-contrast" aria-pressed="false" aria-label="${t.contrast}"></button>
     </div>
     <div class="a11y-font-row">
-      <span class="a11y-label">גודל גופן</span>
+      <span class="a11y-label">${t.fontSize}</span>
       <div class="a11y-font-btns">
-        <button class="a11y-font-btn" id="font-up" aria-label="הגדל גופן">A+</button>
-        <button class="a11y-font-btn" id="font-normal" aria-label="גופן רגיל">רגיל</button>
-        <button class="a11y-font-btn" id="font-down" aria-label="הקטן גופן">A−</button>
+        <button class="a11y-font-btn" id="font-up" aria-label="${t.larger}">A+</button>
+        <button class="a11y-font-btn" id="font-normal" aria-label="${t.normal}">${t.normal}</button>
+        <button class="a11y-font-btn" id="font-down" aria-label="${t.smaller}">A−</button>
       </div>
     </div>
     <div class="a11y-row">
-      <span class="a11y-label">הדגשת קישורים</span>
-      <button class="a11y-toggle" id="toggle-links" aria-pressed="false" aria-label="הדגשת קישורים"></button>
+      <span class="a11y-label">${t.links}</span>
+      <button class="a11y-toggle" id="toggle-links" aria-pressed="false" aria-label="${t.links}"></button>
     </div>
-    <button id="a11y-reset">↺ איפוס</button>
+    <button id="a11y-reset">${t.reset}</button>
   `;
 
   document.body.appendChild(btn);
