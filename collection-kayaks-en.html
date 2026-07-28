@@ -342,7 +342,7 @@
     }
   </style>
 </head>
-<body>
+<body class="ltr">
 <a href="#main-content" class="skip-link">Skip to content</a>
 
   <div class="particles" aria-hidden="true">
@@ -547,10 +547,10 @@
         const info = document.createElement('div');
         info.className = 'item-info';
 
-        if (item.name) {
+        if (item.name_en || item.name) {
           const name = document.createElement('div');
           name.className = 'item-name';
-          name.textContent = item.name;
+          name.textContent = item.name_en || item.name;
           info.appendChild(name);
         }
 

@@ -98,6 +98,120 @@
       .about-modal-photos { flex-direction: column; }
       .about-modal-photos img { width: 100%; }
     }
+
+    /* ---- Stories Carousel ---- */
+    .stories-section {
+      position: relative;
+      z-index: 1;
+      max-width: 1400px;
+      margin: 0 auto 2rem;
+      padding: 0 1.5rem;
+    }
+    .stories-section h2 {
+      font-family: 'Heebo', sans-serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+      font-weight: 600;
+      color: var(--teal-bright);
+      letter-spacing: 0.12em;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.7rem;
+    }
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+      border: 1px solid var(--border-glow);
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+    .carousel-slide {
+      min-width: 100%;
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+      height: 480px;
+    }
+    .slide-img-wrap {
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--teal-deep), var(--bg-dark));
+      height: 100%;
+    }
+    .slide-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .slide-text {
+      padding: 2rem 3rem 2rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.8rem;
+    }
+    .slide-title {
+      font-family: 'Heebo', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--teal-light);
+    }
+    .slide-story {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      overflow: hidden;
+    }
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(0,0,0,0.4);
+      backdrop-filter: blur(6px);
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s;
+      z-index: 5;
+    }
+    .carousel-btn:hover { background: rgba(46,196,218,0.3); }
+    .carousel-prev { left: 12px; }
+    .carousel-next { right: 12px; }
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 1rem 0;
+    }
+    .carousel-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      border: 1px solid var(--teal-bright);
+      background: transparent;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .carousel-dot.active { background: var(--teal-bright); }
+    @media (max-width: 640px) {
+      .carousel-slide { grid-template-columns: 1fr; min-height: auto; }
+      .slide-img-wrap { height: 220px; }
+      .slide-text { padding: 1.2rem; }
+      .slide-story { max-height: 150px; }
+    }
   </style>
 </head>
 <body class="ltr">
@@ -218,10 +332,89 @@
         <p>After the army, I was torn between two paths —<br>continue developing in painting, or study goldsmithing.</p>
         <p style="font-weight:700;color:#ffffff;font-size:1.15rem;margin-top:0.8rem;">I chose goldsmithing because I understood that working with people matters to me.</p>
       </div>
-      <div style="text-align:center;margin-top:0.8rem;">
+      <div style="text-align:center;margin-top:0.3rem;margin-bottom:1.5rem;">
         <button class="about-btn" id="about-open" aria-haspopup="dialog" aria-expanded="false">More about me&hellip;</button>
       </div>
 
+      <!-- Decorative divider -->
+      <div class="spatula-divider" aria-hidden="true">
+        <svg viewBox="0 0 300 28" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="28" cy="14" rx="22" ry="6.5" fill="url(#padLen2)"/>
+          <rect x="50" y="12.5" width="80" height="3" rx="1.5" fill="url(#rodLeftEn2)"/>
+          <circle cx="150" cy="14" r="8.5" fill="none" stroke="url(#bezGradEn2)" stroke-width="2.2"/>
+          <circle cx="150" cy="14" r="5" fill="url(#gemRedEn2)"/>
+          <ellipse cx="148" cy="11.5" rx="2" ry="1.2" fill="rgba(255,255,255,0.4)" transform="rotate(-20,148,11.5)"/>
+          <rect x="170" y="12.5" width="80" height="3" rx="1.5" fill="url(#rodRightEn2)"/>
+          <ellipse cx="272" cy="14" rx="22" ry="6.5" fill="url(#padRen2)"/>
+          <defs>
+            <linearGradient id="padLen2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8aacc0"/><stop offset="50%" stop-color="#ecf8ff"/><stop offset="100%" stop-color="#8aacc0"/></linearGradient>
+            <linearGradient id="padRen2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8aacc0"/><stop offset="50%" stop-color="#ecf8ff"/><stop offset="100%" stop-color="#8aacc0"/></linearGradient>
+            <linearGradient id="rodLeftEn2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#7aaabe"/><stop offset="100%" stop-color="#2ec4da"/></linearGradient>
+            <linearGradient id="rodRightEn2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#2ec4da"/><stop offset="100%" stop-color="#7aaabe"/></linearGradient>
+            <linearGradient id="bezGradEn2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ecf8ff"/><stop offset="100%" stop-color="#cce4f8"/></linearGradient>
+            <radialGradient id="gemRedEn2" cx="40%" cy="35%" r="60%"><stop offset="0%" stop-color="#ff9999"/><stop offset="50%" stop-color="#cc2222"/><stop offset="100%" stop-color="#880000"/></radialGradient>
+          </defs>
+        </svg>
+      </div>
+
+    </section>
+
+    <!-- Stories Carousel -->
+    <section class="stories-section" aria-label="Stories behind the jewelry">
+      <h2>
+        <svg class="subtitle-gem" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:18px;height:18px">
+          <polygon points="7,1 13,7 7,13 1,7" fill="url(#g-title-en-l)"/>
+          <polygon points="7,1 13,7 7,6" fill="rgba(255,255,255,0.35)"/>
+          <defs><linearGradient id="g-title-en-l" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ecf8ff"/><stop offset="100%" stop-color="#2ec4da"/></linearGradient></defs>
+        </svg>
+        Where Every Piece Begins
+        <svg class="subtitle-gem" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:18px;height:18px">
+          <polygon points="7,1 13,7 7,13 1,7" fill="url(#g-title-en-r)"/>
+          <polygon points="7,1 13,7 7,6" fill="rgba(255,255,255,0.35)"/>
+          <defs><linearGradient id="g-title-en-r" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ecf8ff"/><stop offset="100%" stop-color="#2ec4da"/></linearGradient></defs>
+        </svg>
+      </h2>
+      <div class="carousel" id="stories-carousel">
+        <div class="carousel-track" id="carousel-track">
+
+          <!-- Story 1 -->
+          <div class="carousel-slide">
+            <div class="slide-img-wrap">
+              <img src="images/stories/Omer1.png" alt="A Stone With Two Sides" onerror="this.style.opacity='0'" />
+            </div>
+            <div class="slide-text">
+              <span class="slide-title">A Stone With Two Sides</span>
+              <p class="slide-story">Omer, the manager of the kayak club where I paddle, is a man of many kayak journeys around the world. On one of them, on a remote island, he found this beautiful lava stone. In addition to its beauty, it had a perfect natural hole for hanging — exactly in the center, in just the right place. Omer gave me the stone and asked me to "just put a loop for hanging" — and so I did. But something unexpected happened: the stone slipped from my hands, fell to the floor, and broke! Truly frustrating.<br><br>I told Omer and set about saving the situation. I glued it, inserted rivets, and wrapped the break with a decorative silver belt. It turned out beautiful. The break actually improved the piece. And how wonderful that it broke.</p>
+            </div>
+          </div>
+
+          <!-- Story 2 -->
+          <div class="carousel-slide">
+            <div class="slide-img-wrap">
+              <img src="images/stories/SLO.png" alt="Story 2" onerror="this.style.opacity='0'" />
+            </div>
+            <div class="slide-text">
+              <span class="slide-title">Coming Soon</span>
+              <p class="slide-story">A heartfelt story that tells the tale of this special piece of jewelry. A heartfelt story that tells the tale of this special piece of jewelry. A heartfelt story that tells the tale of this special piece of jewelry. A heartfelt story that tells the tale of this special piece of jewelry. A heartfelt story that tells the tale of this special piece of jewelry. A heartfelt story that tells the tale of this special piece of jewelry. A heartfelt story that tells the tale of this special piece of jewelry. A heartfelt story that tells the tale of this special piece of jewelry.</p>
+            </div>
+          </div>
+
+          <!-- Story 3 -->
+          <div class="carousel-slide">
+            <div class="slide-img-wrap">
+              <img src="images/stories/story3.jpeg" alt="Story 3" onerror="this.style.opacity='0'" />
+            </div>
+            <div class="slide-text">
+              <span class="slide-title">Coming Soon</span>
+              <p class="slide-story">A heartfelt story that tells the tale of this special piece of jewelry. A heartfelt story that tells the tale of this special piece of jewelry. A heartfelt story that tells the tale of this special piece of jewelry. A heartfelt story that tells the tale of this special piece of jewelry. A heartfelt story that tells the tale of this special piece of jewelry. A heartfelt story that tells the tale of this special piece of jewelry. A heartfelt story that tells the tale of this special piece of jewelry. A heartfelt story that tells the tale of this special piece of jewelry.</p>
+            </div>
+          </div>
+
+        </div>
+        <button class="carousel-btn carousel-prev" id="carousel-prev" aria-label="Previous story">&#x2039;</button>
+        <button class="carousel-btn carousel-next" id="carousel-next" aria-label="Next story">&#x203a;</button>
+      </div>
+      <div class="carousel-dots" id="carousel-dots"></div>
     </section>
 
     <div class="divider"></div>
@@ -296,6 +489,37 @@
       overlay.addEventListener('click', closeModal);
       document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && !modal.hasAttribute('hidden')) closeModal();
+      });
+    })();
+
+    // Stories Carousel
+    (function() {
+      const track = document.getElementById('carousel-track');
+      const slides = track.querySelectorAll('.carousel-slide');
+      const dotsWrap = document.getElementById('carousel-dots');
+      let current = 0;
+
+      slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Story ' + (i + 1));
+        dot.addEventListener('click', () => goTo(i));
+        dotsWrap.appendChild(dot);
+      });
+
+      function goTo(i) {
+        current = i;
+        track.style.transform = 'translateX(' + (-current * 100) + '%)';
+        dotsWrap.querySelectorAll('.carousel-dot').forEach((d, j) =>
+          d.classList.toggle('active', j === current));
+      }
+
+      document.getElementById('carousel-prev').addEventListener('click', () => goTo((current - 1 + slides.length) % slides.length));
+      document.getElementById('carousel-next').addEventListener('click', () => goTo((current + 1) % slides.length));
+
+      document.addEventListener('keydown', e => {
+        if (e.key === 'ArrowLeft') goTo((current - 1 + slides.length) % slides.length);
+        if (e.key === 'ArrowRight') goTo((current + 1) % slides.length);
       });
     })();
   </script>
