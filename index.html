@@ -281,6 +281,93 @@
       .about-modal-photos { flex-direction: column; }
       .about-modal-photos img { width: 100%; }
     }
+
+    /* ---- Story Modal ---- */
+    .carousel-slide { cursor: pointer; }
+    .carousel-slide:hover .slide-text { background: rgba(255,255,255,0.02); }
+    .slide-read-more {
+      display: inline-block;
+      margin-top: 0.7rem;
+      font-size: 0.82rem;
+      color: var(--teal-bright);
+      opacity: 0.75;
+      font-family: 'Heebo', sans-serif;
+    }
+    .story-modal-wrap {
+      position: fixed;
+      inset: 0;
+      z-index: 1100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .story-modal-wrap[hidden] { display: none; }
+    .story-modal-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.82);
+      backdrop-filter: blur(5px);
+    }
+    .story-modal-box {
+      position: relative;
+      background: var(--bg-card);
+      border: 1px solid var(--border-glow);
+      border-radius: 16px;
+      max-width: 640px;
+      width: 92%;
+      max-height: 88vh;
+      overflow-y: auto;
+      padding: 2.5rem 2rem 2rem;
+      z-index: 1;
+    }
+    .story-modal-close {
+      position: absolute;
+      top: 0.9rem;
+      left: 0.9rem;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.7rem;
+      cursor: pointer;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: background 0.2s;
+    }
+    .story-modal-close:hover { background: rgba(255,255,255,0.12); }
+    .story-modal-img-wrap {
+      width: 100%;
+      max-height: 260px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 1.2rem;
+      background: var(--teal-deep);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .story-modal-img-wrap img {
+      width: 100%;
+      max-height: 260px;
+      object-fit: contain;
+      display: block;
+    }
+    .story-modal-title {
+      font-family: 'Heebo', sans-serif;
+      color: var(--teal-light);
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .story-modal-body {
+      color: var(--text-muted);
+      line-height: 1.85;
+      font-size: 1rem;
+      margin-bottom: 1.2rem;
+    }
   </style>
 </head>
 <body>
@@ -453,38 +540,38 @@
         <div class="carousel-track" id="carousel-track">
 
           <!-- סיפור 1 -->
-          <div class="carousel-slide">
+          <div class="carousel-slide" data-wa="https://wa.me/972523744408?text=היי%20אסנת,%20קראתי%20באתר%20שלך%20את%20הסיפור%20אבן%20שיש%20לה%20הופכין%20ואני%20מעוניינ.ת%20גם%20בתכשיט.">
             <div class="slide-img-wrap">
               <img src="images/stories/Omer1.png" alt="אבן שיש לה הופכין" onerror="this.style.opacity='0'" />
             </div>
             <div class="slide-text">
               <span class="slide-title">אבן שיש לה הופכין</span>
               <p class="slide-story">עומר, מנהל מועדון הקיאקים בו אני חותרת, הוא אדם עטור מסעות קיאקים רבים ברחבי העולם. באחד מהם, באי נידח, עומר מצא אבן לבה יפהפייה. בנוסף ליופי, אלוהים סידר לה חור מושלם לתליה, בדיוק במרכז, במקום הנכון. עומר נתן לי את האבן וביקש "רק תשימי לולאה לתליה" וכך עשיתי. אבל במקרה הזה, אלוהים שוב התערב — האבן נשמטה מידי, נפלה על הרצפה ונשברה! מבאס ממש.<br><br>הודעתי לעומר וניגשתי להציל את המצב. הדבקתי, הכנסתי ניטים ועטפתי את מקום השבר בחגורת כסף דקורטיבית. השבר גרם לי להשביח את התכשיט שיצא יפייפה. יופי שנשבר.<br><br>המתנה שלך, ההשבחה שלי, יחד ניצור תכשיט יחודי.</p>
-              <a class="slide-wa-btn" href="https://wa.me/972523744408?text=היי%20אסנת,%20קראתי%20באתר%20שלך%20את%20הסיפור%20אבן%20שיש%20לה%20הופכין%20ואני%20מעוניינ.ת%20גם%20בתכשיט." target="_blank" rel="noopener noreferrer">💬 שליחת ווצאפ</a>
+              <span class="slide-read-more">לחץ/י לקריאת הסיפור המלא ›</span>
             </div>
           </div>
 
           <!-- סיפור 2 -->
-          <div class="carousel-slide">
+          <div class="carousel-slide" data-wa="https://wa.me/972523744408?text=היי%20אסנת,%20קראתי%20באתר%20שלך%20את%20הסיפור%20חיבור%20מהלב%20ואני%20מעוניינ.ת%20גם%20בתכשיט.">
             <div class="slide-img-wrap">
               <img src="images/stories/SLO.png" alt="חיבור מהלב" onerror="this.style.opacity='0'" />
             </div>
             <div class="slide-text">
               <span class="slide-title">חיבור מהלב</span>
               <p class="slide-story">אבירם (שם בדוי) הגיע אלי להזמנת תכשיט מיוחד ליום ההולדת של אישתו. הוא סיפר שלביתם יש תסמונת SLO המתאפיינת בחיבור של שני בהונות בכף הרגל.<br><br>אבירם ביקש תליון בצורת כף רגל עם לב במקום בו מתחברות שתי הבהונות, עם הכיתוב SLO ואבן קטנה כחולה.<br><br>ניגשתי למלאכה עם הרגישות הראויה, מבינה שמוטלת עלי משימה שיש בה ערך רגשי מאד עמוק. אבירם הביע שביעות רצון מהתוצאה.<br><br>מזמינה אותך ליצור עימי קשר וליצור עבורך את התכשיט שנכון לך.</p>
-              <a class="slide-wa-btn" href="https://wa.me/972523744408?text=היי%20אסנת,%20קראתי%20באתר%20שלך%20את%20הסיפור%20חיבור%20מהלב%20ואני%20מעוניינ.ת%20גם%20בתכשיט." target="_blank" rel="noopener noreferrer">💬 שליחת ווצאפ</a>
+              <span class="slide-read-more">לחץ/י לקריאת הסיפור המלא ›</span>
             </div>
           </div>
 
           <!-- סיפור 3 -->
-          <div class="carousel-slide">
+          <div class="carousel-slide" data-wa="https://wa.me/972523744408?text=היי%20אסנת,%20קראתי%20באתר%20שלך%20את%20הסיפור%20המפוח%20הוא%20הרוח%20ואני%20מעוניינ.ת%20גם%20בתכשיט.">
             <div class="slide-img-wrap">
               <img src="images/stories/accordion.png" alt="המפוח הוא הרוח" onerror="this.style.opacity='0'" />
             </div>
             <div class="slide-text">
               <span class="slide-title">המפוח הוא הרוח</span>
               <p class="slide-story">לאמנון יש חבר שמנגן שנים רבות על אקורדיון. לכבוד יום הולדתו של החבר, החליט אמנון להזמין עבורו מתנה מיוחדת ופנה אלי.<br><br>יצרתי עבורו תליון עם אקורדיון ותחתיו הכתובת "המפוח הוא הרוח".<br><br>רוצה גם להעניק מתנה ייחודית לחבר/ה? הרעיון שלך והיצירה שלי יאפשרו לך לתת תכשיט שאין שני לו.</p>
-              <a class="slide-wa-btn" href="https://wa.me/972523744408?text=היי%20אסנת,%20קראתי%20באתר%20שלך%20את%20הסיפור%20המפוח%20הוא%20הרוח%20ואני%20מעוניינ.ת%20גם%20בתכשיט." target="_blank" rel="noopener noreferrer">💬 שליחת ווצאפ</a>
+              <span class="slide-read-more">לחץ/י לקריאת הסיפור המלא ›</span>
             </div>
           </div>
 
@@ -517,6 +604,20 @@
       <a class="main-wa-btn" href="https://wa.me/972523744408?text=היי%20אסנת,%20הגעתי%20אליך%20דרך%20האתר%20שלך." target="_blank" rel="noopener noreferrer">💬 שליחת ווצאפ</a>
     </div>
   </main>
+
+  <!-- מודל סיפור -->
+  <div class="story-modal-wrap" id="story-modal" hidden role="dialog" aria-modal="true" aria-labelledby="story-modal-title">
+    <div class="story-modal-overlay" id="story-modal-overlay"></div>
+    <div class="story-modal-box">
+      <button class="story-modal-close" id="story-modal-close" aria-label="סגור">&times;</button>
+      <div class="story-modal-img-wrap">
+        <img id="story-modal-img" src="" alt="" />
+      </div>
+      <p class="story-modal-title" id="story-modal-title"></p>
+      <div class="story-modal-body" id="story-modal-body"></div>
+      <a class="slide-wa-btn" id="story-modal-wa" href="#" target="_blank" rel="noopener noreferrer">💬 שליחת ווצאפ</a>
+    </div>
+  </div>
 
   <!-- מודל אודות אסנת -->
   <div class="about-modal-wrap" id="about-modal" hidden role="dialog" aria-modal="true" aria-labelledby="about-modal-name">
@@ -566,6 +667,36 @@
         openBtn.focus();
       }
       openBtn.addEventListener('click', openModal);
+      closeBtn.addEventListener('click', closeModal);
+      overlay.addEventListener('click', closeModal);
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && !modal.hasAttribute('hidden')) closeModal();
+      });
+    })();
+
+    // Story modal
+    (function() {
+      var modal = document.getElementById('story-modal');
+      var overlay = document.getElementById('story-modal-overlay');
+      var closeBtn = document.getElementById('story-modal-close');
+      function openStory(slide) {
+        var img = slide.querySelector('.slide-img-wrap img');
+        document.getElementById('story-modal-img').src = img.src;
+        document.getElementById('story-modal-img').alt = img.alt;
+        document.getElementById('story-modal-title').textContent = slide.querySelector('.slide-title').textContent;
+        document.getElementById('story-modal-body').innerHTML = slide.querySelector('.slide-story').innerHTML;
+        document.getElementById('story-modal-wa').href = slide.dataset.wa;
+        modal.removeAttribute('hidden');
+        document.body.style.overflow = 'hidden';
+        closeBtn.focus();
+      }
+      function closeModal() {
+        modal.setAttribute('hidden', '');
+        document.body.style.overflow = '';
+      }
+      document.querySelectorAll('.carousel-slide').forEach(function(slide) {
+        slide.addEventListener('click', function() { openStory(slide); });
+      });
       closeBtn.addEventListener('click', closeModal);
       overlay.addEventListener('click', closeModal);
       document.addEventListener('keydown', function(e) {

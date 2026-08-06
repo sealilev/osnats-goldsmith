@@ -246,6 +246,94 @@
       transition: background 0.2s;
     }
     .main-wa-btn:hover { background: #1db954; }
+
+    /* ---- Story Modal ---- */
+    .carousel-slide { cursor: pointer; }
+    .carousel-slide:hover .slide-text { background: rgba(255,255,255,0.02); }
+    .slide-read-more {
+      display: inline-block;
+      margin-top: 0.7rem;
+      font-size: 0.82rem;
+      color: var(--teal-bright);
+      opacity: 0.75;
+      font-family: 'Heebo', sans-serif;
+    }
+    .story-modal-wrap {
+      position: fixed;
+      inset: 0;
+      z-index: 1100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .story-modal-wrap[hidden] { display: none; }
+    .story-modal-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.82);
+      backdrop-filter: blur(5px);
+    }
+    .story-modal-box {
+      position: relative;
+      background: var(--bg-card);
+      border: 1px solid var(--border-glow);
+      border-radius: 16px;
+      max-width: 640px;
+      width: 92%;
+      max-height: 88vh;
+      overflow-y: auto;
+      padding: 2.5rem 2rem 2rem;
+      z-index: 1;
+      direction: ltr;
+    }
+    .story-modal-close {
+      position: absolute;
+      top: 0.9rem;
+      right: 0.9rem;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.7rem;
+      cursor: pointer;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: background 0.2s;
+    }
+    .story-modal-close:hover { background: rgba(255,255,255,0.12); }
+    .story-modal-img-wrap {
+      width: 100%;
+      max-height: 260px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 1.2rem;
+      background: var(--teal-deep);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .story-modal-img-wrap img {
+      width: 100%;
+      max-height: 260px;
+      object-fit: contain;
+      display: block;
+    }
+    .story-modal-title {
+      font-family: 'Heebo', sans-serif;
+      color: var(--teal-light);
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .story-modal-body {
+      color: var(--text-muted);
+      line-height: 1.85;
+      font-size: 1rem;
+      margin-bottom: 1.2rem;
+    }
     @media (max-width: 640px) {
       .carousel-slide { grid-template-columns: 1fr; min-height: auto; }
       .slide-img-wrap { height: 220px; }
@@ -418,38 +506,38 @@
         <div class="carousel-track" id="carousel-track">
 
           <!-- Story 1 -->
-          <div class="carousel-slide">
+          <div class="carousel-slide" data-wa="https://wa.me/972523744408?text=Hi%20Osnat,%20I%20read%20your%20story%20%22A%20Stone%20With%20Two%20Sides%22%20on%20your%20website%20and%20I%27m%20also%20interested%20in%20a%20piece%20of%20jewelry.">
             <div class="slide-img-wrap">
               <img src="images/stories/Omer1.png" alt="A Stone With Two Sides" onerror="this.style.opacity='0'" />
             </div>
             <div class="slide-text">
               <span class="slide-title">A Stone With Two Sides</span>
               <p class="slide-story">Omer, the manager of the kayak club where I paddle, is a man of many kayak journeys around the world. On one of them, on a remote island, he found a beautiful lava stone. In addition to its beauty, it had a perfect natural hole for hanging, exactly in the center, in just the right place. Omer gave me the stone and asked me to "just put a loop for hanging," and so I did. But something unexpected happened: the stone slipped from my hands, fell to the floor, and broke! Truly frustrating.<br><br>I told Omer and set about saving the situation. I glued it, inserted rivets, and wrapped the break with a decorative silver belt. The break actually improved the piece, which turned out beautiful. How wonderful that it broke.<br><br>Your gift, my touch, together we'll create a one-of-a-kind piece of jewelry.</p>
-              <a class="slide-wa-btn" href="https://wa.me/972523744408?text=Hi%20Osnat,%20I%20read%20your%20story%20%22A%20Stone%20With%20Two%20Sides%22%20on%20your%20website%20and%20I%27m%20also%20interested%20in%20a%20piece%20of%20jewelry." target="_blank" rel="noopener noreferrer">💬 Send WhatsApp</a>
+              <span class="slide-read-more">Click to read the full story ›</span>
             </div>
           </div>
 
           <!-- Story 2 -->
-          <div class="carousel-slide">
+          <div class="carousel-slide" data-wa="https://wa.me/972523744408?text=Hi%20Osnat,%20I%20read%20your%20story%20%22A%20Connection%20from%20the%20Heart%22%20on%20your%20website%20and%20I%27m%20also%20interested%20in%20a%20piece%20of%20jewelry.">
             <div class="slide-img-wrap">
               <img src="images/stories/SLO.png" alt="A Connection from the Heart" onerror="this.style.opacity='0'" />
             </div>
             <div class="slide-text">
               <span class="slide-title">A Connection from the Heart</span>
               <p class="slide-story">Aviram (a fictitious name) came to me to commission a special piece of jewelry for his wife's birthday. He told me that their daughter has SLO syndrome, a condition characterized by the fusion of two toes on the foot.<br><br>Aviram asked for a pendant in the shape of a foot, with a heart where the two toes meet, inscribed with "SLO" and set with a small blue stone.<br><br>I approached the work with the sensitivity it deserved, aware that I had been entrusted with something of very deep emotional significance. Aviram expressed his satisfaction with the result.<br><br>I invite you to reach out and let me create for you the piece of jewelry that is truly yours.</p>
-              <a class="slide-wa-btn" href="https://wa.me/972523744408?text=Hi%20Osnat,%20I%20read%20your%20story%20%22A%20Connection%20from%20the%20Heart%22%20on%20your%20website%20and%20I%27m%20also%20interested%20in%20a%20piece%20of%20jewelry." target="_blank" rel="noopener noreferrer">💬 Send WhatsApp</a>
+              <span class="slide-read-more">Click to read the full story ›</span>
             </div>
           </div>
 
           <!-- Story 3 -->
-          <div class="carousel-slide">
+          <div class="carousel-slide" data-wa="https://wa.me/972523744408?text=Hi%20Osnat,%20I%20read%20your%20story%20%22The%20Bellows%20Is%20the%20Wind%22%20on%20your%20website%20and%20I%27m%20also%20interested%20in%20a%20piece%20of%20jewelry.">
             <div class="slide-img-wrap">
               <img src="images/stories/accordion.png" alt="The Bellows Is the Wind" onerror="this.style.opacity='0'" />
             </div>
             <div class="slide-text">
               <span class="slide-title">The Bellows Is the Wind</span>
               <p class="slide-story">Amnon has a friend who has been playing the accordion for many years. In honor of his friend's birthday, Amnon decided to commission a special gift, and came to me.<br><br>I created a pendant featuring an accordion, with the inscription "The Bellows Is the Wind" beneath it.<br><br>Would you like to give a truly unique gift to a friend? Your idea and my craft will come together to create a one-of-a-kind piece of jewelry.</p>
-              <a class="slide-wa-btn" href="https://wa.me/972523744408?text=Hi%20Osnat,%20I%20read%20your%20story%20%22The%20Bellows%20Is%20the%20Wind%22%20on%20your%20website%20and%20I%27m%20also%20interested%20in%20a%20piece%20of%20jewelry." target="_blank" rel="noopener noreferrer">💬 Send WhatsApp</a>
+              <span class="slide-read-more">Click to read the full story ›</span>
             </div>
           </div>
 
@@ -482,6 +570,20 @@
       <a class="main-wa-btn" href="https://wa.me/972523744408?text=Hi%20Osnat,%20I%20found%20you%20through%20your%20website." target="_blank" rel="noopener noreferrer">💬 Send WhatsApp</a>
     </div>
   </main>
+
+  <!-- Story Modal -->
+  <div class="story-modal-wrap" id="story-modal" hidden role="dialog" aria-modal="true" aria-labelledby="story-modal-title">
+    <div class="story-modal-overlay" id="story-modal-overlay"></div>
+    <div class="story-modal-box">
+      <button class="story-modal-close" id="story-modal-close" aria-label="Close">&times;</button>
+      <div class="story-modal-img-wrap">
+        <img id="story-modal-img" src="" alt="" />
+      </div>
+      <p class="story-modal-title" id="story-modal-title"></p>
+      <div class="story-modal-body" id="story-modal-body"></div>
+      <a class="slide-wa-btn" id="story-modal-wa" href="#" target="_blank" rel="noopener noreferrer">💬 Send WhatsApp</a>
+    </div>
+  </div>
 
   <!-- About Modal -->
   <div class="about-modal-wrap" id="about-modal" hidden role="dialog" aria-modal="true" aria-labelledby="about-modal-name">
@@ -531,6 +633,36 @@
         openBtn.focus();
       }
       openBtn.addEventListener('click', openModal);
+      closeBtn.addEventListener('click', closeModal);
+      overlay.addEventListener('click', closeModal);
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && !modal.hasAttribute('hidden')) closeModal();
+      });
+    })();
+
+    // Story modal
+    (function() {
+      var modal = document.getElementById('story-modal');
+      var overlay = document.getElementById('story-modal-overlay');
+      var closeBtn = document.getElementById('story-modal-close');
+      function openStory(slide) {
+        var img = slide.querySelector('.slide-img-wrap img');
+        document.getElementById('story-modal-img').src = img.src;
+        document.getElementById('story-modal-img').alt = img.alt;
+        document.getElementById('story-modal-title').textContent = slide.querySelector('.slide-title').textContent;
+        document.getElementById('story-modal-body').innerHTML = slide.querySelector('.slide-story').innerHTML;
+        document.getElementById('story-modal-wa').href = slide.dataset.wa;
+        modal.removeAttribute('hidden');
+        document.body.style.overflow = 'hidden';
+        closeBtn.focus();
+      }
+      function closeModal() {
+        modal.setAttribute('hidden', '');
+        document.body.style.overflow = '';
+      }
+      document.querySelectorAll('.carousel-slide').forEach(function(slide) {
+        slide.addEventListener('click', function() { openStory(slide); });
+      });
       closeBtn.addEventListener('click', closeModal);
       overlay.addEventListener('click', closeModal);
       document.addEventListener('keydown', function(e) {
