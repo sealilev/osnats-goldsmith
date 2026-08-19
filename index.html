@@ -282,6 +282,145 @@
       .about-modal-photos img { width: 100%; }
     }
 
+    /* ---- Featured Section ---- */
+    .featured-section {
+      max-width: 1400px;
+      margin: 0 auto 1rem;
+      padding: 0 1.5rem;
+    }
+    .featured-section h2 {
+      font-family: 'Heebo', sans-serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+      font-weight: 600;
+      color: var(--teal-bright);
+      letter-spacing: 0.12em;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+    }
+    .featured-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glow);
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .featured-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.35); }
+    .featured-img-wrap {
+      width: 100%;
+      aspect-ratio: 1;
+      overflow: hidden;
+      background: var(--teal-deep);
+      cursor: pointer;
+    }
+    .featured-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+    .featured-img-wrap:hover img { transform: scale(1.05); }
+    .featured-info {
+      padding: 0.75rem 0.9rem 0.9rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      flex: 1;
+    }
+    .featured-name {
+      font-family: 'Heebo', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--teal-light);
+    }
+    .featured-size {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .featured-price {
+      font-size: 0.92rem;
+      color: #c8dfc8;
+      font-weight: 600;
+      margin-top: 0.1rem;
+    }
+    .featured-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-top: 0.6rem;
+      background: #25D366;
+      color: #fff;
+      border: none;
+      border-radius: 7px;
+      padding: 0.35rem 0.8rem;
+      font-size: 0.82rem;
+      font-family: 'Heebo', sans-serif;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s;
+      align-self: flex-start;
+    }
+    .featured-wa:hover { background: #1db954; }
+    /* Featured lightbox */
+    .featured-lb-wrap {
+      position: fixed;
+      inset: 0;
+      z-index: 1200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .featured-lb-wrap[hidden] { display: none; }
+    .featured-lb-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.88);
+      backdrop-filter: blur(6px);
+    }
+    .featured-lb-box {
+      position: relative;
+      z-index: 1;
+      max-width: 80vw;
+      max-height: 88vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .featured-lb-box img {
+      max-width: 80vw;
+      max-height: 85vh;
+      border-radius: 10px;
+      object-fit: contain;
+    }
+    .featured-lb-close {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      background: rgba(0,0,0,0.6);
+      border: none;
+      color: #fff;
+      font-size: 1.8rem;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    .featured-lb-close:hover { background: rgba(255,255,255,0.2); }
+    @media (max-width: 640px) {
+      .featured-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+    }
+
     /* ---- Story Modal ---- */
     .carousel-slide { cursor: pointer; }
     .carousel-slide:hover .slide-text { background: rgba(255,255,255,0.02); }
@@ -521,6 +660,33 @@
 
     </section>
 
+    <!-- תכשיטים חדשים בגלריה -->
+    <section class="featured-section" aria-label="חדש בגלריה">
+      <h2>✨ חדש בגלריה</h2>
+      <div class="featured-grid" id="featured-grid"></div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- כפתורי ניווט ראשיים -->
+    <section class="cta-section" aria-label="תחומי עיסוק">
+
+      <a href="jewelry.html" class="cta-btn" aria-label="לדף הצורפות">
+        <span class="cta-icon">💍</span>
+        <span class="cta-btn-title">צורפות</span>
+        <span class="cta-btn-desc">תכשיטים בעיצוב אישי<br>והזמנות מיוחדות</span>
+      </a>
+
+      <a href="workshop-jewelry.html" class="cta-btn" aria-label="לדף סדנה">
+        <span class="cta-icon">⚒️</span>
+        <span class="cta-btn-title">סדנה</span>
+        <span class="cta-btn-desc">סדנת יצירת תכשיט<br>בקבוצות קטנות</span>
+      </a>
+
+    </section>
+
+    <div class="divider"></div>
+
     <!-- קרוסלת סיפורים -->
     <section class="stories-section" aria-label="סיפורים אישיים">
       <h2>
@@ -582,28 +748,19 @@
       <div class="carousel-dots" id="carousel-dots"></div>
     </section>
 
-    <div class="divider"></div>
-
-    <!-- כפתורי ניווט ראשיים -->
-    <section class="cta-section" aria-label="תחומי עיסוק">
-
-      <a href="jewelry.html" class="cta-btn" aria-label="לדף הצורפות">
-        <span class="cta-icon">💍</span>
-        <span class="cta-btn-title">צורפות</span>
-        <span class="cta-btn-desc">תכשיטים בעיצוב אישי<br>והזמנות מיוחדות</span>
-      </a>
-
-      <a href="workshop-jewelry.html" class="cta-btn" aria-label="לדף סדנה">
-        <span class="cta-icon">⚒️</span>
-        <span class="cta-btn-title">סדנה</span>
-        <span class="cta-btn-desc">סדנת יצירת תכשיט<br>בקבוצות קטנות</span>
-      </a>
-
-    </section>
     <div class="main-wa-wrap">
       <a class="main-wa-btn" href="https://wa.me/972523744408?text=היי%20אסנת,%20הגעתי%20אליך%20דרך%20האתר%20שלך." target="_blank" rel="noopener noreferrer">💬 שליחת ווצאפ</a>
     </div>
   </main>
+
+  <!-- Featured Lightbox -->
+  <div class="featured-lb-wrap" id="featured-lb" hidden>
+    <div class="featured-lb-overlay" id="featured-lb-overlay"></div>
+    <div class="featured-lb-box">
+      <button class="featured-lb-close" id="featured-lb-close" aria-label="סגור">&times;</button>
+      <img id="featured-lb-img" src="" alt="" />
+    </div>
+  </div>
 
   <!-- מודל סיפור -->
   <div class="story-modal-wrap" id="story-modal" hidden role="dialog" aria-modal="true" aria-labelledby="story-modal-title">
@@ -672,6 +829,59 @@
       document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && !modal.hasAttribute('hidden')) closeModal();
       });
+    })();
+
+    // Featured section
+    (function() {
+      var lb = document.getElementById('featured-lb');
+      var lbImg = document.getElementById('featured-lb-img');
+      var lbOverlay = document.getElementById('featured-lb-overlay');
+      var lbClose = document.getElementById('featured-lb-close');
+
+      function openLb(src, alt) {
+        lbImg.src = src; lbImg.alt = alt;
+        lb.removeAttribute('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeLb() { lb.setAttribute('hidden',''); document.body.style.overflow = ''; }
+      lbClose.addEventListener('click', closeLb);
+      lbOverlay.addEventListener('click', closeLb);
+      document.addEventListener('keydown', function(e) { if (e.key==='Escape' && !lb.hasAttribute('hidden')) closeLb(); });
+
+      fetch('catalog.json')
+        .then(function(r){ return r.json(); })
+        .then(function(data) {
+          var featured = [];
+          Object.values(data).forEach(function(cat) {
+            Object.values(cat).forEach(function(items) {
+              items.forEach(function(item) {
+                if (item.featured) featured.push(item);
+              });
+            });
+          });
+          featured.sort(function(a,b){ return a.featured - b.featured; });
+          var grid = document.getElementById('featured-grid');
+          featured.forEach(function(item) {
+            var waMsg = encodeURIComponent('היי אסנת, ראיתי את ' + item.name + ' באתר שלך ואני מעוניינ.ת.');
+            var card = document.createElement('div');
+            card.className = 'featured-card';
+            var sizeHtml = item.size ? '<div class="featured-size">' + item.size + '</div>' : '';
+            card.innerHTML =
+              '<div class="featured-img-wrap">' +
+                '<img src="' + item.path + '" alt="' + item.name + '" loading="lazy" onerror="this.style.opacity=\'0\'" />' +
+              '</div>' +
+              '<div class="featured-info">' +
+                '<div class="featured-name">' + item.name + '</div>' +
+                sizeHtml +
+                '<div class="featured-price">₪' + item.price + '</div>' +
+                '<a class="featured-wa" href="https://wa.me/972523744408?text=' + waMsg + '" target="_blank" rel="noopener noreferrer">💬 שליחת ווצאפ</a>' +
+              '</div>';
+            card.querySelector('.featured-img-wrap').addEventListener('click', function() {
+              openLb(item.path, item.name);
+            });
+            grid.appendChild(card);
+          });
+        });
     })();
 
     // Story modal

@@ -1,6 +1,7 @@
 {
   "kayaks": {
     "necklaces": [
+      {"path": "images/jewelry/kayaks/necklaces/הדרקון הוולשי.jpeg", "name": "הדרקון הוולשי", "name_en": "The Welsh Dragon", "price": 550, "featured": 2},
       {"path": "images/jewelry/kayaks/necklaces/הגולש בקיאק.jpeg", "name": "הגולש בקיאק", "name_en": "The Kayak Surfer", "price": 300, "size": "קוטר 3 ס\"מ"},
       {"path": "images/jewelry/kayaks/necklaces/החותר.jpeg", "name": "החותר", "name_en": "The Paddler", "price": 300, "size": "קוטר 3 ס\"מ"},
       {"path": "images/jewelry/kayaks/necklaces/החותרת למרחקים.jpeg", "name": "החותרת למרחקים", "name_en": "Paddling into the Distance", "price": 280, "size": "קוטר 2.8 ס\"מ"},
@@ -22,8 +23,9 @@
   },
   "land": {
     "necklaces": [
+      {"path": "images/jewelry/land/necklaces/נאד מים.jpeg", "name": "נאד מים", "name_en": "Water Canteen", "price": 470, "featured": 1},
       {"path": "images/jewelry/land/necklaces/האישה החופשיה.jpg", "name": "האישה החופשיה", "name_en": "Let's Dance", "price": 300},
-      {"path": "images/jewelry/land/necklaces/חדר הלב.jpg", "name": "חדר הלב", "name_en": "Heart Chamber", "price": 720},
+      {"path": "images/jewelry/land/necklaces/חדר הלב.png", "name": "חדר הלב", "name_en": "Heart Chamber", "price": 720, "featured": 4},
       {"path": "images/jewelry/land/necklaces/חללית הרימון.jpg", "name": "חללית הרימון", "name_en": "Pomegranate Spaceship", "price": 350},
       {"path": "images/jewelry/land/necklaces/מלוא הרימון.jpg", "name": "מלוא הרימון", "name_en": "Full Pomegranate", "price": 330},
       {"path": "images/jewelry/land/necklaces/מעומק ליבי.jpg", "name": "מעומק ליבי", "name_en": "From the Depths of My Heart", "price": 360},
@@ -35,6 +37,7 @@
       {"path": "images/jewelry/land/pins/מראה.jpg", "name": "מראה", "name_en": "Mirror", "price": 450}
     ],
     "rings": [
+      {"path": "images/jewelry/land/rings/טבעת הנזר.jpg", "name": "טבעת הנזר", "name_en": "The Crown Ring", "price": 650, "featured": 3},
       {"path": "images/jewelry/land/rings/באהבה.jpg", "name": "באהבה", "name_en": "With Love", "price": 330},
       {"path": "images/jewelry/land/rings/לנצח יחד.jpg", "name": "לנצח יחד", "name_en": "Forever Together", "price": 690},
       {"path": "images/jewelry/land/rings/משפחה.jpg", "name": "משפחה", "name_en": "Family", "price": 450}
