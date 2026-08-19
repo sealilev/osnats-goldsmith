@@ -37,7 +37,7 @@
       {"path": "images/jewelry/land/pins/מראה.jpg", "name": "מראה", "name_en": "Mirror", "price": 450}
     ],
     "rings": [
-      {"path": "images/jewelry/land/rings/טבעת הנזר.jpg", "name": "טבעת הנזר", "name_en": "The Crown Ring", "price": 650, "featured": 3},
+      {"path": "images/jewelry/land/rings/טבעת הנזר.jpeg", "name": "טבעת הנזר", "name_en": "The Crown Ring", "price": 650, "featured": 3},
       {"path": "images/jewelry/land/rings/באהבה.jpg", "name": "באהבה", "name_en": "With Love", "price": 330},
       {"path": "images/jewelry/land/rings/לנצח יחד.jpg", "name": "לנצח יחד", "name_en": "Forever Together", "price": 690},
       {"path": "images/jewelry/land/rings/משפחה.jpg", "name": "משפחה", "name_en": "Family", "price": 450}
