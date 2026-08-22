@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sealilev.github.io/osnats-goldsmith/sitemap.xml
