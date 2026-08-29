@@ -341,8 +341,11 @@
     }
     .featured-lb-wrap[hidden] { display: none; }
     .featured-lb-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.88); backdrop-filter: blur(6px); }
-    .featured-lb-box { position: relative; z-index: 1; max-width: 80vw; max-height: 88vh; display: flex; align-items: center; justify-content: center; }
-    .featured-lb-box img { max-width: 80vw; max-height: 85vh; border-radius: 10px; object-fit: contain; }
+    .featured-lb-box { position: relative; z-index: 1; max-width: min(80vw, 560px); display: flex; flex-direction: column; align-items: center; background: var(--bg-card); border: 1px solid var(--border-glow); border-radius: 16px; overflow: hidden; }
+    .featured-lb-box img { max-width: min(80vw, 560px); max-height: 66vh; object-fit: contain; display: block; }
+    .featured-lb-info { width: 100%; padding: 0.9rem 1.4rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; border-top: 1px solid var(--border-glow); flex-wrap: wrap; }
+    .featured-lb-name { font-family: 'Heebo', sans-serif; color: var(--teal-light); font-weight: 600; font-size: 1.05rem; }
+    .featured-lb-price { color: var(--silver-shine); font-size: 1rem; }
     .featured-lb-close {
       position: fixed; top: 1rem; right: 1rem;
       background: rgba(0,0,0,0.6); border: none; color: #fff;
@@ -694,6 +697,11 @@
     <div class="featured-lb-box">
       <button class="featured-lb-close" id="featured-lb-close" aria-label="Close">&times;</button>
       <img id="featured-lb-img" src="" alt="" />
+      <div class="featured-lb-info">
+        <span class="featured-lb-name" id="featured-lb-name"></span>
+        <span class="featured-lb-price" id="featured-lb-price"></span>
+        <a class="featured-wa" id="featured-lb-wa" href="#" target="_blank" rel="noopener noreferrer">💬 Send WhatsApp</a>
+      </div>
     </div>
   </div>
 
@@ -770,11 +778,17 @@
     (function() {
       var lb = document.getElementById('featured-lb');
       var lbImg = document.getElementById('featured-lb-img');
+      var lbName = document.getElementById('featured-lb-name');
+      var lbPrice = document.getElementById('featured-lb-price');
+      var lbWa = document.getElementById('featured-lb-wa');
       var lbOverlay = document.getElementById('featured-lb-overlay');
       var lbClose = document.getElementById('featured-lb-close');
 
-      function openLb(src, alt) {
+      function openLb(src, alt, price, waHref) {
         lbImg.src = src; lbImg.alt = alt;
+        lbName.textContent = alt;
+        lbPrice.textContent = '₪' + price;
+        lbWa.href = waHref;
         lb.removeAttribute('hidden');
         document.body.style.overflow = 'hidden';
       }
@@ -813,7 +827,7 @@
                 '<a class="featured-wa" href="https://wa.me/972523744408?text=' + waMsg + '" target="_blank" rel="noopener noreferrer">💬 Send WhatsApp</a>' +
               '</div>';
             card.querySelector('.featured-img-wrap').addEventListener('click', function() {
-              openLb(item.path, name);
+              openLb(item.path, name, item.price, 'https://wa.me/972523744408?text=' + waMsg);
             });
             grid.appendChild(card);
           });
