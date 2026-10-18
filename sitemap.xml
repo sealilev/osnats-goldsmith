@@ -129,6 +129,42 @@
   </url>
 
   <url>
+    <loc>https://sealilev.github.io/osnats-goldsmith/workshop-course-soon.html</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://sealilev.github.io/osnats-goldsmith/workshop-course-soon.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sealilev.github.io/osnats-goldsmith/workshop-course-soon-en.html"/>
+  </url>
+
+  <url>
+    <loc>https://sealilev.github.io/osnats-goldsmith/workshop-course-soon-en.html</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://sealilev.github.io/osnats-goldsmith/workshop-course-soon.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sealilev.github.io/osnats-goldsmith/workshop-course-soon-en.html"/>
+  </url>
+
+  <url>
+    <loc>https://sealilev.github.io/osnats-goldsmith/contact.html</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://sealilev.github.io/osnats-goldsmith/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sealilev.github.io/osnats-goldsmith/contact-en.html"/>
+  </url>
+
+  <url>
+    <loc>https://sealilev.github.io/osnats-goldsmith/contact-en.html</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://sealilev.github.io/osnats-goldsmith/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sealilev.github.io/osnats-goldsmith/contact-en.html"/>
+  </url>
+
+  <url>
     <loc>https://sealilev.github.io/osnats-goldsmith/accessibility.html</loc>
     <lastmod>2026-08-22</lastmod>
     <changefreq>yearly</changefreq>

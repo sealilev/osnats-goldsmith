@@ -512,22 +512,70 @@ nav a:hover::after {
 }
 
 .back-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
+  display: block;
+  width: fit-content;
+  margin: 1.5rem auto 4rem;
   text-decoration: none;
   color: var(--teal-bright);
-  font-size: 0.95rem;
+  font-size: 1rem;
+  font-weight: 600;
   letter-spacing: 0.05em;
-  transition: color 0.3s, gap 0.3s;
+  border: 1px solid rgba(46, 196, 218, 0.45);
+  border-radius: 24px;
+  padding: 0.55rem 1.8rem;
+  transition: color 0.25s, background 0.25s, border-color 0.25s;
   position: relative;
   z-index: 1;
-  margin-bottom: 4rem;
 }
 
 .back-link:hover {
   color: var(--teal-light);
-  gap: 0.8rem;
+  background: rgba(46, 196, 218, 0.1);
+  border-color: rgba(46, 196, 218, 0.7);
+}
+
+/* ---- Featured month + sale prices ---- */
+.featured-month-label {
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  margin: -0.6rem 0 1.2rem;
+  opacity: 0.75;
+}
+.featured-price-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.1rem;
+  flex-wrap: wrap;
+}
+.featured-price-orig {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-decoration: line-through;
+  opacity: 0.65;
+}
+.featured-price-disc {
+  font-size: 0.95rem;
+  color: #c8dfc8;
+  font-weight: 700;
+}
+/* ---- More stories button ---- */
+.more-stories-btn {
+  display: inline-block;
+  color: var(--teal-bright);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-family: 'Heebo', sans-serif;
+  padding: 0.4rem 1.2rem;
+  border: 1px solid rgba(46, 196, 218, 0.4);
+  border-radius: 20px;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.more-stories-btn:hover {
+  background: rgba(46, 196, 218, 0.1);
+  border-color: rgba(46, 196, 218, 0.7);
 }
 
 /* ===============================

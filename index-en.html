@@ -479,6 +479,8 @@
         <li><a href="index-en.html">Home</a></li>
         <li><a href="jewelry-en.html">Jewelry</a></li>
         <li><a href="workshop-jewelry-en.html">Workshop</a></li>
+        <li><a href="workshop-course-soon-en.html">Course</a></li>
+        <li><a href="contact-en.html">Contact</a></li>
       </ul>
     </nav>
 
@@ -598,9 +600,10 @@
 
     </section>
 
-    <!-- New in Gallery -->
-    <section class="featured-section" aria-label="New in Gallery">
-      <h2>✨ New in the Gallery ✨</h2>
+    <!-- Monthly Deals -->
+    <section class="featured-section" aria-label="Monthly Deals">
+      <h2>✨ Monthly Deals ✨</h2>
+      <p class="featured-month-label" id="featured-month-label"></p>
       <div class="featured-grid" id="featured-grid"></div>
     </section>
 
@@ -611,8 +614,7 @@
 
       <a href="jewelry-en.html" class="cta-btn" aria-label="Go to Jewelry page">
         <span class="cta-icon">💍</span>
-        <span class="cta-btn-title">Jewelry</span>
-        <span class="cta-btn-desc">Custom jewelry design<br>and special orders</span>
+        <span class="cta-btn-title">Jewelry &amp; Special Orders</span>
       </a>
 
       <a href="workshop-jewelry-en.html" class="cta-btn" aria-label="Go to Workshop page">
@@ -684,6 +686,9 @@
         <button class="carousel-btn carousel-next" id="carousel-next" aria-label="Next story">&#x203a;</button>
       </div>
       <div class="carousel-dots" id="carousel-dots"></div>
+      <div id="more-stories-wrap" hidden style="text-align:center;margin-top:0.8rem;">
+        <a href="#stories-carousel" class="more-stories-btn">More Stories ›</a>
+      </div>
     </section>
 
     <div class="main-wa-wrap">
@@ -776,6 +781,11 @@
 
     // Featured section
     (function() {
+      var MONTHS_EN = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+      var now = new Date();
+      var monthLabelEl = document.getElementById('featured-month-label');
+      if (monthLabelEl) monthLabelEl.textContent = MONTHS_EN[now.getMonth()] + ' ' + now.getFullYear();
+
       var lb = document.getElementById('featured-lb');
       var lbImg = document.getElementById('featured-lb-img');
       var lbName = document.getElementById('featured-lb-name');
@@ -784,10 +794,10 @@
       var lbOverlay = document.getElementById('featured-lb-overlay');
       var lbClose = document.getElementById('featured-lb-close');
 
-      function openLb(src, alt, price, waHref) {
+      function openLb(src, alt, price, discPrice, waHref) {
         lbImg.src = src; lbImg.alt = alt;
         lbName.textContent = alt;
-        lbPrice.textContent = '₪' + price;
+        lbPrice.innerHTML = '<s style="opacity:0.5;font-size:0.88em">&#x20aa;' + price + '</s> <span style="color:#c8dfc8;font-weight:700">&#x20aa;' + discPrice + '</span>';
         lbWa.href = waHref;
         lb.removeAttribute('hidden');
         document.body.style.overflow = 'hidden';
@@ -823,11 +833,11 @@
               '<div class="featured-info">' +
                 '<div class="featured-name">' + name + '</div>' +
                 sizeHtml +
-                '<div class="featured-price">₪' + item.price + '</div>' +
+                '<div class="featured-price-wrap"><span class="featured-price-orig">&#x20aa;' + item.price + '</span><span class="featured-price-disc">&#x20aa;' + Math.round(item.price * 0.9) + '</span></div>' +
                 '<a class="featured-wa" href="https://wa.me/972523744408?text=' + waMsg + '" target="_blank" rel="noopener noreferrer">💬 Send WhatsApp</a>' +
               '</div>';
             card.querySelector('.featured-img-wrap').addEventListener('click', function() {
-              openLb(item.path, name, item.price, 'https://wa.me/972523744408?text=' + waMsg);
+              openLb(item.path, name, item.price, Math.round(item.price * 0.9), 'https://wa.me/972523744408?text=' + waMsg);
             });
             grid.appendChild(card);
           });
@@ -893,6 +903,11 @@
         if (e.key === 'ArrowLeft') goTo((current - 1 + slides.length) % slides.length);
         if (e.key === 'ArrowRight') goTo((current + 1) % slides.length);
       });
+
+      if (slides.length > 3) {
+        var moreWrap = document.getElementById('more-stories-wrap');
+        if (moreWrap) moreWrap.removeAttribute('hidden');
+      }
     })();
   </script>
   <script src="js/accessibility-widget.js"></script>
