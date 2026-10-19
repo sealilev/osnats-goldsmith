@@ -354,9 +354,9 @@ nav a:hover::after {
    =============================== */
 .cta-section {
   width: 100%;
-  max-width: 900px;
+  max-width: 1000px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   margin: 0 auto 4rem;
   padding: 0 2rem;
