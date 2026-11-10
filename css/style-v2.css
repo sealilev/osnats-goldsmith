@@ -513,21 +513,21 @@ nav a:hover::after {
 
 .sold-badge {
   position: absolute;
-  top: 42px;
-  left: 8px;
+  top: 30px;
+  left: -8px;
   background: #fff;
   color: #3d6e55;
   font-family: 'Heebo', sans-serif;
-  font-size: 1.3rem;
+  font-size: 1.05rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  padding: 10px 36px;
+  padding: 6px 30px;
   border-radius: 20px;
   transform: rotate(-35deg);
   transform-origin: center;
   z-index: 2;
   pointer-events: none;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.22);
 }
 
 .photo-item.is-sold img,
