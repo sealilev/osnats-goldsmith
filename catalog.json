@@ -17,7 +17,7 @@
       {"path": "images/jewelry/kayaks/pins/משוט.jpg", "name": "משוט", "name_en": "Paddle", "price": 300}
     ],
     "earrings": [
-      {"path": "images/jewelry/kayaks/earrings/משוטי הכסף.jpg", "name": "משוטי הכסף", "name_en": "Silver Paddles", "price": 320}
+      {"path": "images/jewelry/kayaks/earrings/משוטי הכסף.jpg", "name": "משוטי הכסף", "name_en": "Silver Paddles", "price": 320, "status": "sold"}
     ],
     "rings": []
   },
@@ -29,7 +29,7 @@
       {"path": "images/jewelry/land/necklaces/חללית הרימון.jpg", "name": "חללית הרימון", "name_en": "Pomegranate Spaceship", "price": 350},
       {"path": "images/jewelry/land/necklaces/מלוא הרימון.jpg", "name": "מלוא הרימון", "name_en": "Full Pomegranate", "price": 330},
       {"path": "images/jewelry/land/necklaces/מעומק ליבי.jpg", "name": "מעומק ליבי", "name_en": "From the Depths of My Heart", "price": 360},
-      {"path": "images/jewelry/land/necklaces/עלי שלכת.jpg", "name": "עלי שלכת", "name_en": "Autumn Leaves", "price": 730},
+      {"path": "images/jewelry/land/necklaces/עלי שלכת.jpg", "name": "עלי שלכת", "name_en": "Autumn Leaves", "price": 730, "status": "sold"},
       {"path": "images/jewelry/land/necklaces/פירות הרימון.jpg", "name": "פירות הרימון", "name_en": "Pomegranate Fruits", "price": 500},
       {"path": "images/jewelry/land/necklaces/ריבועי הלב.jpg", "name": "ריבועי הלב", "name_en": "Heart Squares", "price": 720}
     ],
@@ -37,7 +37,7 @@
       {"path": "images/jewelry/land/pins/מראה.jpg", "name": "מראה", "name_en": "Mirror", "price": 450}
     ],
     "rings": [
-      {"path": "images/jewelry/land/rings/טבעת הנזר.jpeg", "name": "טבעת הנזר", "name_en": "The Crown Ring", "price": 900, "featured": 3},
+      {"path": "images/jewelry/land/rings/טבעת הנזר.jpeg", "name": "טבעת הנזר", "name_en": "The Crown Ring", "price": 900, "featured": 3, "status": "sold"},
       {"path": "images/jewelry/land/rings/באהבה.jpg", "name": "באהבה", "name_en": "With Love", "price": 330},
       {"path": "images/jewelry/land/rings/לנצח יחד.jpg", "name": "לנצח יחד", "name_en": "Forever Together", "price": 690},
       {"path": "images/jewelry/land/rings/משפחה.jpg", "name": "משפחה", "name_en": "Family", "price": 450}

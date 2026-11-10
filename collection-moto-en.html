@@ -4,8 +4,21 @@
   <meta charset="UTF-8" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💎</text></svg>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Off-Road – Motorcycles | Osnat Levy</title>
-  <meta name="description" content="Kayaks &amp; Sea collection - Osnat Levy Goldsmith" />
+  <title>Motorcycles | Osnat Levy - Off-Road Jewelry</title>
+  <meta name="description" content="Osnat Levy's Off-Road jewelry collection - unique silver jewelry for motorcycle lovers and off-road riders." />
+  <!-- SEO: canonical + hreflang -->
+  <link rel="canonical" href="https://sealilev.github.io/osnats-goldsmith/collection-moto-en.html" />
+  <link rel="alternate" hreflang="he" href="https://sealilev.github.io/osnats-goldsmith/collection-moto.html" />
+  <link rel="alternate" hreflang="en" href="https://sealilev.github.io/osnats-goldsmith/collection-moto-en.html" />
+  <link rel="alternate" hreflang="x-default" href="https://sealilev.github.io/osnats-goldsmith/collection-moto.html" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Osnat Levy - Goldsmith" />
+  <meta property="og:title" content="Motorcycles | Osnat Levy - Off-Road Jewelry" />
+  <meta property="og:description" content="Osnat Levy's Off-Road jewelry collection - unique silver jewelry for motorcycle lovers and off-road riders." />
+  <meta property="og:url" content="https://sealilev.github.io/osnats-goldsmith/collection-moto-en.html" />
+  <meta property="og:image" content="https://sealilev.github.io/osnats-goldsmith/images/logo.png" />
   <link rel="stylesheet" href="css/style-v2.css" />
   <style>
 
@@ -361,6 +374,8 @@
         <li><a href="index-en.html">Home</a></li>
         <li><a href="jewelry-en.html">Jewelry</a></li>
         <li><a href="workshop-jewelry-en.html">Workshop</a></li>
+        <li><a href="workshop-course-soon-en.html">Course</a></li>
+        <li><a href="contact-en.html">Contact</a></li>
       </ul>
     </nav>
     <a href="collection-moto.html" class="lang-toggle" aria-label="עבור לעברית">
@@ -433,7 +448,7 @@
 
   <footer>
     <p class="credit"><a href="https://sealilev.github.io/liora/index-en.html" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;">Website designed &amp; built by Liora Levi - Sea++</a></p>
-    <p class="rights">Website © <span id="year"></span> Liora Levi &nbsp;|&nbsp; Jewelry &amp; content © Osnat Levy</p>
+    <p class="rights">Jewelry &amp; content &copy; Osnat Levy &nbsp;|&nbsp; Website &copy; <span id="year"></span> Liora Levi</p>
     <p class="accessibility-link"><a href="accessibility-en.html">Accessibility Statement</a></p>
   </footer>
 
@@ -531,6 +546,13 @@
         img.alt = item.name || '';
         img.onerror = () => card.style.opacity = '0.3';
         div.appendChild(img);
+        if (item.status === 'sold') {
+          div.classList.add('is-sold');
+          const badge = document.createElement('span');
+          badge.className = 'sold-badge';
+          badge.textContent = 'SOLD';
+          div.appendChild(badge);
+        }
         div.addEventListener('click', () => {
           const allDivs = Array.from(grid.querySelectorAll('.photo-item'));
           openLightbox(allDivs, allDivs.indexOf(div));
@@ -566,19 +588,21 @@
         info.appendChild(sizePriceRow);
 
         // WhatsApp button
-        const wa = document.createElement('a');
-        wa.className = 'item-whatsapp';
-        wa.target = '_blank';
-        wa.rel = 'noopener noreferrer';
-        const eurRate = window._eurRate || 3.9;
-        const eurPrice = item.price ? '€' + (item.price / eurRate).toFixed(0) : '';
-        const msg = 'Hi Osnat, I am interested in ' +
-          (item.name_en || item.name || 'a jewelry piece') +
-          (eurPrice ? ' (price: ' + eurPrice + ')' : '') +
-          (item.size ? ' (size: ' + item.size + ')' : '');
-        wa.href = 'https://wa.me/972523744408?text=' + encodeURIComponent(msg);
-        wa.innerHTML = '💬 WhatsApp';
-        info.appendChild(wa);
+        if (item.status !== 'sold') {
+          const wa = document.createElement('a');
+          wa.className = 'item-whatsapp';
+          wa.target = '_blank';
+          wa.rel = 'noopener noreferrer';
+          const eurRate = window._eurRate || 3.9;
+          const eurPrice = item.price ? '€' + (item.price / eurRate).toFixed(0) : '';
+          const msg = 'Hi Osnat, I am interested in ' +
+            (item.name_en || item.name || 'a jewelry piece') +
+            (eurPrice ? ' (price: ' + eurPrice + ')' : '') +
+            (item.size ? ' (size: ' + item.size + ')' : '');
+          wa.href = 'https://wa.me/972523744408?text=' + encodeURIComponent(msg);
+          wa.innerHTML = '💬 WhatsApp';
+          info.appendChild(wa);
+        }
 
         card.appendChild(div);
         card.appendChild(info);
