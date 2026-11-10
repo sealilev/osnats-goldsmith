@@ -513,8 +513,8 @@ nav a:hover::after {
 
 .sold-badge {
   position: absolute;
-  top: 30px;
-  left: -18px;
+  top: 20px;
+  left: -4px;
   background: #fff;
   color: #3d6e55;
   font-family: 'Heebo', sans-serif;
