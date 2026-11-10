@@ -511,6 +511,30 @@ nav a:hover::after {
   line-height: 1.7;
 }
 
+.sold-badge {
+  position: absolute;
+  top: 20px;
+  left: -24px;
+  background: #5a9270;
+  color: #fff;
+  font-family: 'Heebo', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 5px 32px;
+  transform: rotate(-35deg);
+  transform-origin: center;
+  z-index: 2;
+  pointer-events: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+.photo-item.is-sold img,
+.featured-img-wrap.is-sold img {
+  opacity: 0.6;
+  filter: grayscale(30%);
+}
+
 .back-link {
   display: block;
   width: fit-content;
