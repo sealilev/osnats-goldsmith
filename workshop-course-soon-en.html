@@ -53,13 +53,20 @@
     .price-row:last-child { border-bottom: none; }
     .price-row strong { color: var(--silver-shine); font-size: 1.05rem; }
     .price-row .trial { color: var(--teal-bright); font-size: 0.8rem; }
-    .course-wa-btn {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: #25D366; color: #fff; border: none; border-radius: 10px;
-      padding: 0.65rem 1.6rem; font-size: 1rem; font-family: 'Heebo', sans-serif;
-      font-weight: 600; text-decoration: none; transition: background 0.2s; cursor: pointer;
+    .whatsapp-section { text-align: center; margin-bottom: 0.5rem; }
+    .whatsapp-section p { color: var(--text-muted); font-size: 1rem; margin-bottom: 1.2rem; line-height: 1.6; }
+    .whatsapp-btn {
+      display: inline-flex; align-items: center; gap: 0.7rem;
+      text-decoration: none;
+      background: linear-gradient(135deg, #25d366, #128c7e);
+      color: white; font-size: 1rem; font-weight: 500;
+      padding: 0.9rem 2rem; border-radius: 50px;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      letter-spacing: 0.03em;
     }
-    .course-wa-btn:hover { background: #1db954; }
+    .whatsapp-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(37, 211, 102, 0.5); }
+    .whatsapp-icon { font-size: 1.4rem; }
   </style>
 </head>
 <body class="ltr">
@@ -147,9 +154,13 @@
           </div>
         </div>
 
-        <a href="https://wa.me/972523744408?text=Hi%20Osnat,%20I%27m%20interested%20in%20learning%20more%20about%20the%20goldsmithing%20course." class="course-wa-btn" target="_blank" rel="noopener noreferrer">
-          💬 Details &amp; Registration via WhatsApp
-        </a>
+        <div class="whatsapp-section">
+          <p>For details and registration</p>
+          <a href="https://wa.me/972523744408?text=Hi%20Osnat,%20I%27m%20interested%20in%20learning%20more%20about%20the%20goldsmithing%20course." class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+            <span class="whatsapp-icon">💬</span>
+            Send WhatsApp
+          </a>
+        </div>
       </div>
     </div>
 
