@@ -553,6 +553,13 @@
         img.alt = item.name || '';
         img.onerror = () => card.style.opacity = '0.3';
         div.appendChild(img);
+        if (item.status === 'sold') {
+          div.classList.add('is-sold');
+          const badge = document.createElement('span');
+          badge.className = 'sold-badge';
+          badge.textContent = 'SOLD';
+          div.appendChild(badge);
+        }
         div.addEventListener('click', () => {
           const allDivs = Array.from(grid.querySelectorAll('.photo-item'));
           openLightbox(allDivs, allDivs.indexOf(div));
@@ -588,19 +595,21 @@
         info.appendChild(sizePriceRow);
 
         // WhatsApp button
-        const wa = document.createElement('a');
-        wa.className = 'item-whatsapp';
-        wa.target = '_blank';
-        wa.rel = 'noopener noreferrer';
-        const eurRate = window._eurRate || 3.9;
-        const eurPrice = item.price ? '€' + (item.price / eurRate).toFixed(0) : '';
-        const msg = 'Hi Osnat, I am interested in ' +
-          (item.name_en || item.name || 'a jewelry piece') +
-          (eurPrice ? ' (price: ' + eurPrice + ')' : '') +
-          (item.size ? ' (size: ' + item.size + ')' : '');
-        wa.href = 'https://wa.me/972523744408?text=' + encodeURIComponent(msg);
-        wa.innerHTML = '💬 WhatsApp';
-        info.appendChild(wa);
+        if (item.status !== 'sold') {
+          const wa = document.createElement('a');
+          wa.className = 'item-whatsapp';
+          wa.target = '_blank';
+          wa.rel = 'noopener noreferrer';
+          const eurRate = window._eurRate || 3.9;
+          const eurPrice = item.price ? '€' + (item.price / eurRate).toFixed(0) : '';
+          const msg = 'Hi Osnat, I am interested in ' +
+            (item.name_en || item.name || 'a jewelry piece') +
+            (eurPrice ? ' (price: ' + eurPrice + ')' : '') +
+            (item.size ? ' (size: ' + item.size + ')' : '');
+          wa.href = 'https://wa.me/972523744408?text=' + encodeURIComponent(msg);
+          wa.innerHTML = '💬 WhatsApp';
+          info.appendChild(wa);
+        }
 
         card.appendChild(div);
         card.appendChild(info);

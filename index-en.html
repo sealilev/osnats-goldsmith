@@ -298,6 +298,7 @@
       overflow: hidden;
       background: var(--teal-deep);
       cursor: pointer;
+      position: relative;
     }
     .featured-img-wrap img {
       width: 100%;
@@ -833,18 +834,23 @@
             var card = document.createElement('div');
             card.className = 'featured-card';
             var sizeHtml = item.size ? '<div class="featured-size">' + item.size + '</div>' : '';
+            var soldBadgeHtml = item.status === 'sold' ? '<span class="sold-badge">SOLD</span>' : '';
+            var waHtml = item.status !== 'sold' ? '<a class="featured-wa" href="https://wa.me/972523744408?text=' + waMsg + '" target="_blank" rel="noopener noreferrer">💬 Send WhatsApp</a>' : '';
             card.innerHTML =
-              '<div class="featured-img-wrap">' +
+              '<div class="featured-img-wrap' + (item.status === 'sold' ? ' is-sold' : '') + '">' +
                 '<img src="' + item.path + '" alt="' + name + '" loading="lazy" onerror="this.style.opacity=\'0\'" />' +
+                soldBadgeHtml +
               '</div>' +
               '<div class="featured-info">' +
                 '<div class="featured-name">' + name + '</div>' +
                 sizeHtml +
                 '<div class="featured-price-wrap"><span class="featured-price-orig">&#x20aa;' + item.price + '</span><span class="featured-price-disc">&#x20aa;' + Math.round(item.price * 0.9) + '</span></div>' +
-                '<a class="featured-wa" href="https://wa.me/972523744408?text=' + waMsg + '" target="_blank" rel="noopener noreferrer">💬 Send WhatsApp</a>' +
+                waHtml +
               '</div>';
             card.querySelector('.featured-img-wrap').addEventListener('click', function() {
-              openLb(item.path, name, item.price, Math.round(item.price * 0.9), 'https://wa.me/972523744408?text=' + waMsg);
+              if (item.status !== 'sold') {
+                openLb(item.path, name, item.price, Math.round(item.price * 0.9), 'https://wa.me/972523744408?text=' + waMsg);
+              }
             });
             grid.appendChild(card);
           });

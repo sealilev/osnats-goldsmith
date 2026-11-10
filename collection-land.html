@@ -544,6 +544,13 @@
         img.alt = item.name || '';
         img.onerror = () => card.style.opacity = '0.3';
         div.appendChild(img);
+        if (item.status === 'sold') {
+          div.classList.add('is-sold');
+          const badge = document.createElement('span');
+          badge.className = 'sold-badge';
+          badge.textContent = 'נמכר';
+          div.appendChild(badge);
+        }
         div.addEventListener('click', () => {
           const allDivs = Array.from(grid.querySelectorAll('.photo-item'));
           openLightbox(allDivs, allDivs.indexOf(div));
@@ -578,17 +585,19 @@
         info.appendChild(sizePriceRow);
 
         // WhatsApp button
-        const wa = document.createElement('a');
-        wa.className = 'item-whatsapp';
-        wa.target = '_blank';
-        wa.rel = 'noopener noreferrer';
-        const msg = 'היי אסנת, אני מעוניינ.ת ב' +
-          (item.name || 'תכשיט') +
-          (item.price ? ' (מחיר: ' + item.price + ' ש"ח)' : '') +
-          (item.size ? ' (גודל: ' + item.size + ')' : '');
-        wa.href = 'https://wa.me/972523744408?text=' + encodeURIComponent(msg);
-        wa.innerHTML = '💬 שליחת ווצאפ';
-        info.appendChild(wa);
+        if (item.status !== 'sold') {
+          const wa = document.createElement('a');
+          wa.className = 'item-whatsapp';
+          wa.target = '_blank';
+          wa.rel = 'noopener noreferrer';
+          const msg = 'היי אסנת, אני מעוניינ.ת ב' +
+            (item.name || 'תכשיט') +
+            (item.price ? ' (מחיר: ' + item.price + ' ש"ח)' : '') +
+            (item.size ? ' (גודל: ' + item.size + ')' : '');
+          wa.href = 'https://wa.me/972523744408?text=' + encodeURIComponent(msg);
+          wa.innerHTML = '💬 שליחת ווצאפ';
+          info.appendChild(wa);
+        }
 
         card.appendChild(div);
         card.appendChild(info);
