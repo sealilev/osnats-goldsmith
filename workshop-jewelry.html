@@ -174,10 +174,50 @@
       font-size: 1.4rem;
     }
 
+    .events-section {
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+    .events-title {
+      font-family: 'Heebo', sans-serif;
+      font-size: 1.05rem;
+      color: var(--teal-light);
+      letter-spacing: 0.05em;
+      margin-bottom: 1.2rem;
+      font-weight: 500;
+    }
+    .event-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.8rem;
+    }
+    .event-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glow);
+      border-radius: 16px;
+      padding: 1.2rem 0.8rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .event-icon { font-size: 1.8rem; }
+    .event-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--teal-light);
+    }
+    .event-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
     @media (max-width: 600px) {
       .workshop-details { padding: 1.8rem 1.5rem; }
       .workshop-gallery { grid-template-columns: 1fr 1fr; }
       .workshop-gallery .gallery-item:last-child { grid-column: span 2; }
+      .event-cards { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
@@ -247,6 +287,32 @@
             <span>370 ש"ח למשתתפ.ת</span>
           </li>
         </ul>
+      </div>
+
+      <div class="events-section">
+        <h2 class="events-title">מתאים לאירועים</h2>
+        <div class="event-cards">
+          <div class="event-card">
+            <span class="event-icon">🎂</span>
+            <div class="event-name">יום הולדת</div>
+            <div class="event-desc">לחוגג/ת לבד, או יחד עם האורחים</div>
+          </div>
+          <div class="event-card">
+            <span class="event-icon">💍</span>
+            <div class="event-name">יום נישואין</div>
+            <div class="event-desc">הזוג חווה יחד יצירת תכשיטים</div>
+          </div>
+          <div class="event-card">
+            <span class="event-icon">🗝️</span>
+            <div class="event-name">מפגש משפחתי</div>
+            <div class="event-desc">לצאת מחדר הבריחה לחדר היצירה</div>
+          </div>
+          <div class="event-card">
+            <span class="event-icon">👯</span>
+            <div class="event-name">חיזוק חברות</div>
+            <div class="event-desc">עשה לי ואעשה לך</div>
+          </div>
+        </div>
       </div>
 
       <div class="workshop-gallery">
