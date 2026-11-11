@@ -188,7 +188,7 @@
     }
     .event-cards {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       gap: 0.8rem;
     }
     .event-card {
@@ -218,6 +218,7 @@
       .workshop-gallery { grid-template-columns: 1fr 1fr; }
       .workshop-gallery .gallery-item:last-child { grid-column: span 2; }
       .event-cards { grid-template-columns: repeat(2, 1fr); }
+      .event-cards .event-card:last-child { grid-column: span 2; max-width: 50%; margin: 0 auto; }
     }
   </style>
 </head>
@@ -314,6 +315,11 @@
             <span class="event-icon">👯</span>
             <div class="event-name">Friends' day</div>
             <div class="event-desc">Make one for me, I'll make one for you</div>
+          </div>
+          <div class="event-card">
+            <span class="event-icon">✨</span>
+            <div class="event-name">Just for the fun of it</div>
+            <div class="event-desc">Smith, create, wear</div>
           </div>
         </div>
       </div>
