@@ -102,6 +102,74 @@
       color: var(--teal-bright);
       font-size: 0.8rem;
     }
+    .terms-accordion {
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(46, 196, 218, 0.25);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .terms-toggle {
+      width: 100%;
+      background: rgba(46, 196, 218, 0.06);
+      border: none;
+      cursor: pointer;
+      padding: 1rem 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--teal-light);
+      font-family: 'Heebo', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-align: right;
+      direction: rtl;
+      transition: background 0.2s;
+    }
+    .terms-toggle:hover { background: rgba(46, 196, 218, 0.12); }
+    .terms-arrow {
+      font-size: 0.75rem;
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+    }
+    .terms-accordion.open .terms-arrow { transform: rotate(180deg); }
+    .terms-body {
+      display: none;
+      padding: 1.2rem 1.4rem;
+      text-align: right;
+      direction: rtl;
+    }
+    .terms-accordion.open .terms-body { display: block; }
+    .terms-body h3 {
+      font-family: 'Heebo', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--teal-light);
+      margin: 1.1rem 0 0.4rem;
+    }
+    .terms-body h3:first-child { margin-top: 0; }
+    .terms-body p, .terms-body li {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 0.3rem;
+    }
+    .terms-body ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .terms-body ul li::before {
+      content: '• ';
+      color: var(--teal-bright);
+    }
+    .terms-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      opacity: 0.7;
+      margin-top: 1rem;
+      border-top: 1px solid rgba(46, 196, 218, 0.15);
+      padding-top: 0.8rem;
+    }
     .whatsapp-section { text-align: center; margin-bottom: 0.5rem; }
     .whatsapp-section p { color: var(--text-muted); font-size: 1rem; margin-bottom: 1.2rem; line-height: 1.6; }
     .whatsapp-btn {
@@ -203,6 +271,51 @@
           </div>
         </div>
 
+        <div class="terms-accordion" id="termsAccordion">
+          <button class="terms-toggle" onclick="toggleTerms()" aria-expanded="false" aria-controls="termsBody">
+            <span>פרטי הרשמה ותנאים</span>
+            <span class="terms-arrow">▼</span>
+          </button>
+          <div class="terms-body" id="termsBody" role="region">
+            <h3>1. כללי</h3>
+            <p>הקורס מועבר על ידי אסנת לוי בסטודיו הביתי שלה בכפר סבא. הקורס מיועד ללומד/ת יחיד/ה או לשניים לכל היותר.</p>
+
+            <h3>2. מבנה הקורס</h3>
+            <ul>
+              <li>12 שיעורים, אחת לשבוע, ביום ובשעה קבועים שנקבעים מראש.</li>
+              <li>משך כל שיעור: כשעתיים. משך הקורס: כשלושה חודשים.</li>
+              <li>כלי העבודה וחומרי הגלם כלולים במחיר הקורס.</li>
+            </ul>
+
+            <h3>3. שיעור ניסיון</h3>
+            <p>ניתן להגיע לשיעור ניסיון בעלות של 270 ש"ח (10% הנחה). שיעור הניסיון אינו מחייב להמשיך לקורס המלא.</p>
+
+            <h3>4. דחיות — לומד/ת</h3>
+            <ul>
+              <li>עד 3 דחיות מותרות, בהודעה מראש של לפחות 24 שעות.</li>
+              <li>דחייה בשל חג או אירוע לאומי אינה נספרת במכסה.</li>
+              <li>החל מהדחייה הרביעית: השיעור יבוטל ולא יוחזר.</li>
+            </ul>
+
+            <h3>5. דחיות — מדריכה</h3>
+            <ul>
+              <li>עד 3 דחיות, בהודעה מראש של לפחות 24 שעות.</li>
+              <li>החל מהדחייה הרביעית: יתווסף שיעור נוסף ללא תשלום (סה"כ 13).</li>
+            </ul>
+
+            <h3>6. ביטול הקורס</h3>
+            <p>ביטול הקורס לאחר תחילתו לא יזכה בהחזר כספי. במקרים של כוח עליון — ניתן לפנות לבחינת המקרה לגופו.</p>
+
+            <h3>7. תשלום</h3>
+            <ul>
+              <li>שיעור-שיעור: 300 ש"ח בעת ההרשמה (לשיעור הראשון), ו-300 ש"ח בתחילת כל שיעור עד האחד-עשר. השיעור האחרון שולם מראש — לא נדרש תשלום נוסף. סה"כ: 3,600 ש"ח.</li>
+              <li>תשלום מלא מראש: 3,200 ש"ח לפני השיעור הראשון (חיסכון של 400 ש"ח).</li>
+            </ul>
+
+            <p class="terms-note">מסמך תנאים מלא נשלח עם אישור ההרשמה.</p>
+          </div>
+        </div>
+
         <div class="whatsapp-section">
           <p>לפרטים והרשמה</p>
           <a href="https://wa.me/972523744408?text=היי%20אסנת,%20אני%20מעוניינ.ת%20לשמוע%20עוד%20על%20קורס%20הצורפות." class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
@@ -223,6 +336,14 @@
   </footer>
 
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    function toggleTerms() {
+      const acc = document.getElementById('termsAccordion');
+      const btn = acc.querySelector('.terms-toggle');
+      const isOpen = acc.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen);
+    }
+  </script>
   <script src="js/accessibility-widget.js"></script>
 </body>
 </html>
